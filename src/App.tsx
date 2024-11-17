@@ -1,8 +1,15 @@
 import WebApp from "@twa-dev/sdk";
 import "./style.css";
+import { useEffect } from "react";
 
 export default function App() {
   WebApp.setBackgroundColor("#EFEFF4")
+
+  useEffect(()=>{
+    window.addEventListener("focus", () => {
+      window.scrollTo(0, 0);
+    })
+  },[])
   
   return (
     <div className="App" style={{height:'100vh', overflow: 'scroll'}}>
