@@ -1,11 +1,10 @@
-:root {
-  margin: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background-color: #EFEFF4;
-  margin: 0px;
-  box-sizing: border-box;
+html, body, #root {
+  width: 100%;
+  height: 100%;
   overflow: hidden;
+  overscroll-behavior: none;
+}
+#root {
+  /* Preserve scrolling behavior */
+  overflow-y: auto;
 }
