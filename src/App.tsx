@@ -1,6 +1,8 @@
+import WebApp from "@twa-dev/sdk";
 import "./style.css";
 
 export default function App() {
+  WebApp.setBackgroundColor("#EFEFF4")
   return (
     <div className="App" style={{height:'100vh', overflow: 'scroll'}}>
       <div className="fix-bottom-button">I am fix at bottom</div>
