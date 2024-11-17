@@ -1,46 +1,116 @@
-import "./App.css";
+import "./style.css";
 
-const App = () => {
+export default function App() {
   return (
-    <div className="container">
-      App
-      <div style={{ padding: "40px" }}>
-        <input placeholder="hello"></input>
-      </div>
-      <div style={{ padding: "40px" }}>
-        <input placeholder="hello"></input>
-      </div>
-      <div style={{ padding: "40px" }}>
-        <input placeholder="hello"></input>
-      </div>
-      <div style={{ padding: "40px" }}>
-        <input placeholder="hello"></input>
-      </div>
-      <div style={{ padding: "40px" }}>
-        <input placeholder="hello"></input>
-      </div>
-      <div style={{ padding: "40px" }}>
-        <input placeholder="hello"></input>
-      </div>
-      <div style={{ padding: "40px" }}>
-        <input placeholder="hello"></input>
-      </div>
-      <div style={{ padding: "40px" }}>
-        <input placeholder="hello"></input>
-      </div>
-      <div style={{ padding: "40px" }}>
-        <input placeholder="hello"></input>
-      </div>
-      <div style={{ padding: "40px" }}>
-        <input placeholder="hello"></input>
-      </div>
-      <div style={{ bottom: 0, position: "fixed", background: "red", width: '100%' }}>
-        <div style={{ padding: "20px" }}>
-          <button>click me</button>
-        </div>
-      </div>
+    <div className="App">
+      <div className="fix-bottom-button">I am fix at bottom</div>
+      <h1>Hello CodeSandbox</h1>
+      <h2>Start editing to see some magic happen!</h2>
+      <br />
+      <h2>Start editing to see some magic happen!</h2>
+      <br />
+      <h2>Start editing to see some magic happen!</h2>
+      <br />
+      <h2>Start editing to see some magic happen!</h2>
+      <br />
+      <h2>Start editing to see some magic happen!</h2>
+      <br />
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+      <input type="number"></input>
+
+      <h2>Start editing to see some magic happen!</h2>
+      <br />
+      <h2>Start editing to see some magic happen!</h2>
+      <br />
+      <h2>Start editing to see some magic happen!</h2>
+      <br />
+      <h2>Start editing to see some magic happen!</h2>
+      <br />
+      <h2>Start editing to see some magic happen!</h2>
+      <br />
+      <h2>Start editing to see some magic happen!</h2>
+      <br />
+      <h2>Start editing to see some magic happen!</h2>
+      <br />
+      <h2>Start editing to see some magic happen!</h2>
+      <br />
+      <h2>Start editing to see some magic happen!</h2>
+      <br />
+      <h2>Start editing to see some magic happen!</h2>
+      <br />
+      <h2>Start editing to see some magic happen!</h2>
+      <br />
+      <h2>Start editing to see some magic happen!</h2>
+      <br />
+      <h2>Start editing to see some magic happen!</h2>
+      <br />
+      <h2>Start editing to see some magic happen!</h2>
+      <br />
+      <h2>Start editing to see some magic happen!</h2>
+      <br />
+      <h2>Start editing to see some magic happen!</h2>
+      <br />
+      <h2>Start editing to see some magic happen!</h2>
+      <br />
+      <h2>Start editing to see some magic happen!</h2>
+      <br />
+      <h2>Start editing to see some magic happen!</h2>
+      <br />
+      <h2>Start editing to see some magic happen!</h2>
+      <br />
+      <h2>Start editing to see some magic happen!</h2>
+      <br />
     </div>
   );
-};
-
-export default App;
+}

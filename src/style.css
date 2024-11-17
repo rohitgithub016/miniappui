@@ -1,0 +1,27 @@
+.App {
+    font-family: sans-serif;
+    text-align: center;
+  }
+  
+  .fix-bottom-button {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 2rem;
+    right: 2rem;
+  
+    background-image: linear-gradient(90deg, #ffa513, #ff5a1c);
+    box-shadow: 0 0.13333rem 0.4rem 0 rgba(255, 80, 0, 0.4);
+  
+    border-radius: 1.5rem;
+    color: white;
+    font-weight: 700;
+    font-size: 1.5rem;
+  
+    height: 3rem;
+  
+    /* 行距，MDN 推荐使用 无单位数字 */
+    /* Unitless values: use this number multiplied
+  by the element's font size */
+    line-height: 2;
+  }
+  
