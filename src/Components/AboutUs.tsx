@@ -1,7 +1,17 @@
-const AboutUs = () => {
-  return (
-    <div>AboutUs</div>
-  )
-}
+import WebApp from "@twa-dev/sdk";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-export default AboutUs
+const AboutUs = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    WebApp?.BackButton?.show();
+    WebApp?.BackButton?.onClick(() => {
+      navigate("/");
+    });
+  }, []);
+
+  return <div>AboutUs</div>;
+};
+
+export default AboutUs;
