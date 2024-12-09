@@ -3,12 +3,17 @@ import Layout from "../Components/Layout";
 import Home from "../Components/Home";
 import Career from "../Components/Career";
 import AboutUs from "../Components/AboutUs";
+import App from "../App";
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <Layout />,
       children: [
+        {
+          path: "/",
+          element: <App />,
+        },
         {
           path: "/",
           element: <Home />,
