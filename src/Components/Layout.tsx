@@ -8,7 +8,7 @@ const Layout = () => {
   const location = useLocation();
   console.log(location);
   const handleBack = () => {
-    console.log(location)
+    console.log("parent")
     history.back();
   };
   useEffect(() => {
