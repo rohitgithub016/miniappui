@@ -1,11 +1,14 @@
 import WebApp from "@twa-dev/sdk";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const AboutUs = () => {
+  const navigate = useNavigate();
+  const handleBack = () => {
+    navigate("/");
+  };
   useEffect(() => {
-    WebApp?.onEvent("backButtonClicked", () => {
-      history?.pushState({}, "", "/");
-    });
+    WebApp?.BackButton?.onClick(handleBack);
   }, []);
 
   return <div>AboutUs</div>;
