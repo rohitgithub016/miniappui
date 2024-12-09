@@ -1,7 +1,9 @@
 import WebApp from "@twa-dev/sdk";
+import eruda from "eruda";
 import { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 
+eruda.init()
 const Layout = () => {
   const location = useLocation();
   console.log(location);
