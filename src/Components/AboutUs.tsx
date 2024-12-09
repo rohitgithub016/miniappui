@@ -6,7 +6,7 @@ const AboutUs = () => {
   const navigate = useNavigate();
   const handleBack = () => {
     console.log("child")
-    navigate("/");
+    navigate("/temp");
   };
   useEffect(() => {
     WebApp?.BackButton?.onClick(handleBack);
