@@ -10,6 +10,7 @@ const AboutUs = () => {
   };
   useEffect(() => {
     WebApp?.BackButton?.onClick(handleBack);
+    return () => WebApp?.BackButton?.offClick(handleBack)
   }, []);
 
   return <div>AboutUs</div>;
