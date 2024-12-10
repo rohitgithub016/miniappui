@@ -1,6 +1,5 @@
 import WebApp from "@twa-dev/sdk";
 import "./style.css";
-import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 WebApp.setBackgroundColor("#EFEFF4");
