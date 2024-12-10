@@ -14,15 +14,7 @@ export default function App() {
     navigate('/home');
   }
 
-  const handleBack = () => {
-    console.log("parent");
-    history.back();
-  };
-  useEffect(() => {
-    WebApp?.BackButton?.show();
-    WebApp?.BackButton?.onClick(handleBack);
-    return () => WebApp?.BackButton.offClick(handleBack);
-  }, []);
+
   return (
     <div>
       APP
