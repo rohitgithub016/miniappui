@@ -1,14 +1,23 @@
 import WebApp from "@twa-dev/sdk";
 import eruda from "eruda";
 import { useEffect } from "react";
+import { useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
 
 eruda.init();
 const Layout = () => {
+  const count = useSelector((state: { value: number }) => state.value);
+
   const handleBack = () => {
     console.log("PARENT")
     history.back();
   };
+
+  useEffect(()=>{
+    if(count > 0){
+      WebApp?.BackButton.offClick(handleBack)
+    }
+  },[count])
 
   useEffect(() => {
     WebApp?.BackButton?.show();
