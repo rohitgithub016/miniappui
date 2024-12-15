@@ -17,6 +17,9 @@ const Layout = () => {
     if (count > 0) {
       console.log("clear count", count);
       WebApp?.BackButton.offClick(handleBack);
+      WebApp?.BackButton?.onClick(()=>{
+        console.log("Hello this should be first");
+      })
     }
   }, [count]);
 
