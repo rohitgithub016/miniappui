@@ -10,7 +10,7 @@ const AboutUs = () => {
 
   const handleBack = () => {
     console.log("child")
-    navigate("/");
+    navigate("/home");
   }
   useEffect(() => {
     dispatch(increment())

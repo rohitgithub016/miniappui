@@ -16,7 +16,6 @@ const Layout = () => {
   useEffect(() => {
     if (count > 0) {
       console.log("clear count", count);
-
       WebApp?.BackButton.offClick(handleBack);
     }
   }, [count]);
