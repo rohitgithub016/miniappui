@@ -6,11 +6,11 @@ import { Outlet } from "react-router-dom";
 eruda.init();
 const Layout = () => {
   const handleBack = () => {
+    console.log("PARENT")
     history.back();
   };
 
   useEffect(() => {
-    console.log("PARENT")
     WebApp?.BackButton?.show();
     WebApp?.BackButton?.onClick(handleBack);
     return () => WebApp?.BackButton.offClick(handleBack);
