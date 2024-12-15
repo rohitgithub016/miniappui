@@ -15,7 +15,7 @@ export default function App() {
   const handleNavigate = () => {
     navigate("/home");
   };
-  
+
   const handleBack = () => {
     console.log("PARENT");
     history.back();
@@ -25,9 +25,9 @@ export default function App() {
     if (count > 0) {
       console.log("clear count", count);
       WebApp?.BackButton.offClick(handleBack);
-      WebApp?.BackButton?.onClick(()=>{
+      WebApp?.BackButton?.onClick(() => {
         console.log("Hello this should be first");
-      })
+      });
     }
   }, [count]);
 
@@ -40,8 +40,20 @@ export default function App() {
   return (
     <div>
       APP
-      <button onClick={handleNavigate}>Next page</button>
       <div>{count}</div>
-    </div>
+      <p style={{ fontSize: 32 }}>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt quo
+        fugit soluta earum impedit nihil odit, alias accusantium nam expedita
+        eaque deserunt ipsa ex numquam deleniti ab magni praesentium nostrum.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum facere
+        quod, excepturi minus esse impedit possimus perferendis! Iusto possimus
+        dolorem totam ipsum quo doloremque iste placeat voluptates. Laborum,
+        itaque Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque
+        accusamus nulla doloribus magnam dignissimos accusantium molestiae
+        excepturi, sint facere autem, dolores consequatur laboriosam corrupti,
+        quas assumenda vel totam asperiores. Voluptatem
+      </p>
+      <button onClick={handleNavigate}>Next page</button>
+    </div> 
   );
 }
