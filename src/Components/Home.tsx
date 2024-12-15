@@ -35,6 +35,11 @@ const Home = () => {
         excepturi, sint facere autem, dolores consequatur laboriosam corrupti,
         quas assumenda vel totam asperiores. Voluptatem
       </p>
+      <button onClick={()=>{    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    })}}>clicasdfasdf</button>
     </div>
   );
 };
