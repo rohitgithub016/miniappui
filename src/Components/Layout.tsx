@@ -1,33 +1,9 @@
-import WebApp from "@twa-dev/sdk";
 import eruda from "eruda";
-import { useEffect } from "react";
-import { useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
 
 eruda.init();
 const Layout = () => {
-  const count = useSelector((state: { value: number }) => state.value);
 
-  const handleBack = () => {
-    console.log("PARENT");
-    history.back();
-  };
-
-  useEffect(() => {
-    if (count > 0) {
-      console.log("clear count", count);
-      WebApp?.BackButton.offClick(handleBack);
-      WebApp?.BackButton?.onClick(()=>{
-        console.log("Hello this should be first");
-      })
-    }
-  }, [count]);
-
-  useEffect(() => {
-    WebApp?.BackButton?.show();
-    WebApp?.BackButton?.onClick(handleBack);
-    return () => WebApp?.BackButton.offClick(handleBack);
-  }, []);
 
   return (
     <div>
