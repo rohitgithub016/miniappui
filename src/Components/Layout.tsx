@@ -9,15 +9,17 @@ const Layout = () => {
   const count = useSelector((state: { value: number }) => state.value);
 
   const handleBack = () => {
-    console.log("PARENT")
+    console.log("PARENT");
     history.back();
   };
 
-  useEffect(()=>{
-    if(count > 0){
-      WebApp?.BackButton.offClick(handleBack)
+  useEffect(() => {
+    if (count > 0) {
+      console.log("clear count", count);
+
+      WebApp?.BackButton.offClick(handleBack);
     }
-  },[count])
+  }, [count]);
 
   useEffect(() => {
     WebApp?.BackButton?.show();
