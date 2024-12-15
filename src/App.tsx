@@ -54,6 +54,8 @@ export default function App() {
         quas assumenda vel totam asperiores. Voluptatem
       </p>
       <button onClick={handleNavigate} style={{padding: '20px'}}>Next page</button>
+      <div >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur expedita soluta, rem omnis ipsam ad aliquam animi repellat nihil aliquid quis vero id sunt praesentium iusto, error exercitationem, fugit temporibus.</div>
+
     </div> 
   );
 }
