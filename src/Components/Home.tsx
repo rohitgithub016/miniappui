@@ -10,12 +10,14 @@ const Home = () => {
   };
 
   const scrollToElement = () => {
+    //@ts-expect-error
     elementRef?.current.scrollIntoView({
       behavior: 'smooth',
       block: 'start', // Align the element to the top
     });
   };
 
+    //@ts-expect-error
   const handleScrollToTop = () => {
     window.scrollTo({
       top: 0,
