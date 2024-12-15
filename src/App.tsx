@@ -53,7 +53,7 @@ export default function App() {
         excepturi, sint facere autem, dolores consequatur laboriosam corrupti,
         quas assumenda vel totam asperiores. Voluptatem
       </p>
-      <button onClick={handleNavigate}>Next page</button>
+      <button onClick={handleNavigate} style={{padding: '20px'}}>Next page</button>
     </div> 
   );
 }
