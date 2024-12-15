@@ -34,7 +34,6 @@ export default function App() {
   useEffect(() => {
     WebApp?.BackButton?.show();
     WebApp?.BackButton?.onClick(handleBack);
-    return () => WebApp?.BackButton.offClick(handleBack);
   }, []);
 
   return (

@@ -1,11 +1,26 @@
 import WebApp from "@twa-dev/sdk";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const elementRef = useRef(null);
   const navigate = useNavigate();
   const handleClick = () => {
     navigate("/career");
+  };
+
+  const scrollToElement = () => {
+    elementRef?.current.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start', // Align the element to the top
+    });
+  };
+
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // Smooth scrolling
+    });
   };
 
   useEffect(()=>{
@@ -20,7 +35,7 @@ const Home = () => {
   },[])
 
   return (
-    <div>
+    <div id="home" ref={elementRef}>
       Home
       <button onClick={handleClick}>OnClick</button>
       <p style={{ fontSize: 32 }}>
@@ -35,7 +50,7 @@ const Home = () => {
         excepturi, sint facere autem, dolores consequatur laboriosam corrupti,
         quas assumenda vel totam asperiores. Voluptatem
       </p>
-      <button style={{padding: '20px'}} onClick={()=>{if (window.scrollY > 0) window.scrollTo(0, 0);}}>clicasdfasdf</button>
+      <button style={{padding: '20px'}} onClick={scrollToElement}>clicasdfasdf</button>
 
       <div >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur expedita soluta, rem omnis ipsam ad aliquam animi repellat nihil aliquid quis vero id sunt praesentium iusto, error exercitationem, fugit temporibus.</div>
     </div>
