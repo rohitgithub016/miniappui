@@ -3,8 +3,6 @@ import { Outlet } from "react-router-dom";
 
 eruda.init();
 const Layout = () => {
-
-
   return (
     <div>
       <Outlet />
