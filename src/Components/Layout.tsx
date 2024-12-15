@@ -10,6 +10,7 @@ const Layout = () => {
   };
 
   useEffect(() => {
+    console.log("PARENT")
     WebApp?.BackButton?.show();
     WebApp?.BackButton?.onClick(handleBack);
     return () => WebApp?.BackButton.offClick(handleBack);

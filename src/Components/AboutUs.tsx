@@ -8,10 +8,13 @@ const AboutUs = () => {
     navigate("/");
   }
   useEffect(() => {
+    console.log("child")
     WebApp?.BackButton?.onClick(handleBack);
     return () => WebApp?.BackButton.offClick(handleBack);
   }, []);
-  return <div>AboutUs</div>;
+  return <div>
+    <button onClick={handleBack}>AboutUs</button>
+  </div>;
 };
 
 export default AboutUs;
