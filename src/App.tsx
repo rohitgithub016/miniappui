@@ -1,60 +1,50 @@
-import WebApp from "@twa-dev/sdk";
-import "./style.css";
-import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { useEffect } from "react";
+import React, { useState } from 'react';
+import type { DrawerProps, RadioChangeEvent } from 'antd';
+import { Button, Drawer, Radio, Space } from 'antd';
 
-WebApp.setBackgroundColor("#EFEFF4");
-WebApp.expand();
-WebApp.disableVerticalSwipes();
+const App: React.FC = () => {
+  const [open, setOpen] = useState(false);
+  const [placement, setPlacement] = useState<DrawerProps['placement']>('left');
 
-export default function App() {
-  const navigate = useNavigate();
-  const count = useSelector((state: { value: number }) => state.value);
-
-  const handleNavigate = () => {
-    navigate("/home");
+  const showDrawer = () => {
+    setOpen(true);
   };
 
-  const handleBack = () => {
-    console.log("PARENT");
-    history.back();
+  const onClose = () => {
+    setOpen(false);
   };
 
-  useEffect(() => {
-    if (count > 0) {
-      console.log("clear count", count);
-      WebApp?.BackButton.offClick(handleBack);
-      WebApp?.BackButton?.onClick(() => {
-        console.log("Hello this should be first");
-      });
-    }
-  }, [count]);
-
-  useEffect(() => {
-    WebApp?.BackButton?.show();
-    WebApp?.BackButton?.onClick(handleBack);
-  }, []);
+  const onChange = (e: RadioChangeEvent) => {
+    setPlacement(e.target.value);
+  };
 
   return (
-    <div>
-      APP
-      <div>{count}</div>
-      <p style={{ fontSize: 32 }}>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt quo
-        fugit soluta earum impedit nihil odit, alias accusantium nam expedita
-        eaque deserunt ipsa ex numquam deleniti ab magni praesentium nostrum.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum facere
-        quod, excepturi minus esse impedit possimus perferendis! Iusto possimus
-        dolorem totam ipsum quo doloremque iste placeat voluptates. Laborum,
-        itaque Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque
-        accusamus nulla doloribus magnam dignissimos accusantium molestiae
-        excepturi, sint facere autem, dolores consequatur laboriosam corrupti,
-        quas assumenda vel totam asperiores. Voluptatem
-      </p>
-      <button onClick={handleNavigate} style={{padding: '20px'}}>Next page</button>
-      <div >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur expedita soluta, rem omnis ipsam ad aliquam animi repellat nihil aliquid quis vero id sunt praesentium iusto, error exercitationem, fugit temporibus.</div>
-
-    </div> 
+    <>
+      <Space>
+        <Radio.Group value={placement} onChange={onChange}>
+          <Radio value="top">top</Radio>
+          <Radio value="right">right</Radio>
+          <Radio value="bottom">bottom</Radio>
+          <Radio value="left">left</Radio>
+        </Radio.Group>
+        <Button type="primary" onClick={showDrawer}>
+          Open
+        </Button>
+      </Space>
+      <Drawer
+        title="Basic Drawer"
+        placement={placement}
+        closable={false}
+        onClose={onClose}
+        open={open}
+        key={placement}
+      >
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+      </Drawer>
+    </>
   );
-}
+};
+
+export default App;
