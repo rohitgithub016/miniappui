@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import type { DrawerProps, RadioChangeEvent } from 'antd';
-import { Button, Drawer, Radio, Space } from 'antd';
+import React, { useState } from "react";
+import type { DrawerProps, RadioChangeEvent } from "antd";
+import { Button, Drawer, Radio, Space } from "antd";
 
 const App: React.FC = () => {
   const [open, setOpen] = useState(false);
-  const [placement, setPlacement] = useState<DrawerProps['placement']>('left');
+  const [placement, setPlacement] = useState<DrawerProps["placement"]>("left");
 
   const showDrawer = () => {
     setOpen(true);
@@ -39,9 +39,9 @@ const App: React.FC = () => {
         open={open}
         key={placement}
       >
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis et,
+        similique, veniam inventore fugit quam nemo sunt eum optio dolores,
+        fugiat sed ad porro dolorem quaerat quidem perspiciatis qui. Temporibus.
       </Drawer>
     </>
   );
