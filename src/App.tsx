@@ -39,7 +39,10 @@ const App: React.FC = () => {
         onClose={onClose}
         open={open}
         key={placement}
-        height={"fit-content"}
+        // height={"fit-content"}
+        style={{ height: "auto" }} // Dynamically adjusts height
+        styles={{body:{overflow: "visible"}}}
+        bodyStyle={{ overflow: "visible" }}
       >
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis et,
         similique, veniam inventore fugit quam nemo sunt eum optio dolores,
