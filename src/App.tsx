@@ -31,6 +31,7 @@ const App: React.FC = () => {
           Open
         </Button>
       </Space>
+      <input type="text" />
       <Drawer
         title="Basic Drawer"
         placement={placement}
@@ -38,6 +39,7 @@ const App: React.FC = () => {
         onClose={onClose}
         open={open}
         key={placement}
+        height={"fit-content"}
       >
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis et,
         similique, veniam inventore fugit quam nemo sunt eum optio dolores,
