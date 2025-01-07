@@ -1,6 +1,27 @@
 import { Button, Flex } from "antd";
+import { useEffect } from "react";
 
 const App = () => {
+  useEffect(() => {
+    const handleClick = (event: MouseEvent): void => {
+      const tags = ["INPUT", "TEXTAREA"];
+      const focused = document.activeElement as HTMLElement | null;
+
+      if (
+        focused &&
+        focused !== event.target &&
+        tags.includes(focused.tagName)
+      ) {
+        focused.blur();
+      }
+    };
+
+    document.addEventListener("click", handleClick);
+
+    return () => {
+      document.removeEventListener("click", handleClick);
+    };
+  }, []);
   return (
     <>
       <Flex vertical style={{ background: "#FFFF" }}>
@@ -32,23 +53,26 @@ const App = () => {
           corrupti officiis sed eaque non qui quo.
         </Flex>
         <Flex
-        vertical
-        style={{
-          margin: 0,
-          position: "fixed",
-          bottom: 0,
-          width: "100vw",
-          background: "#EFEFF4",
-          border: "none",
-          zIndex: 1,
-          left: 0,
-          right: 0
-        }}
-      >
-        <Flex style={{ padding: "0px 16px 30px 16px", width: "100%" }} vertical>
-          <Button style={{ background: "red" }}>CLICK ME</Button>
+          vertical
+          style={{
+            margin: 0,
+            position: "fixed",
+            bottom: 0,
+            width: "100vw",
+            background: "#EFEFF4",
+            border: "none",
+            zIndex: 1,
+            left: 0,
+            right: 0,
+          }}
+        >
+          <Flex
+            style={{ padding: "0px 16px 30px 16px", width: "100%" }}
+            vertical
+          >
+            <Button style={{ background: "red" }}>CLICK ME</Button>
+          </Flex>
         </Flex>
-      </Flex>
       </Flex>
     </>
   );
