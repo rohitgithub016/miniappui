@@ -2,8 +2,12 @@ import { Button, Flex } from "antd";
 
 const App = () => {
   return (
-    <Flex vertical style={{background: '#FFFF'}}>
-      <Flex style={{ fontSize: "24px" }} vertical gap={10}>
+    <Flex vertical style={{ background: "#FFFF" }}>
+      <Flex
+        style={{ fontSize: "24px", marginBottom: "40px" }}
+        vertical
+        gap={10}
+      >
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit accusamus
         expedita perspiciatis deserunt minus facere exercitationem laudantium
         vero. Voluptas modi rem, unde eveniet corrupti officiis sed eaque non
@@ -20,7 +24,7 @@ const App = () => {
         consectetur adipisicing elit. Velit accusamus expedita perspiciatis
         deserunt minus facere exercitationem laudantium vero. Voluptas modi rem,
         unde eveniet corrupti officiis sed eaque non qui quo.
-        <input/>
+        <input />
       </Flex>
       <Flex
         vertical
