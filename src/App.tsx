@@ -2,7 +2,7 @@ import { Button, Flex } from "antd";
 
 const App = () => {
   return (
-    <Flex vertical>
+    <Flex vertical style={{background: '#FFFF'}}>
       <Flex style={{ fontSize: "24px" }} vertical gap={10}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit accusamus
         expedita perspiciatis deserunt minus facere exercitationem laudantium
