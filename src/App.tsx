@@ -17,14 +17,15 @@ const App = () => {
         eaque non qui quo. Lorem ipsum dolor sit amet consectetur adipisicing
         elit. Velit accusamus expedita perspiciatis deserunt minus facere
         exercitationem laudantium vero. Voluptas modi rem, unde eveniet corrupti
-        officiis sed eaque non qui quo. Lorem ipsum dolor sit amet consectetur
+        officiis sed eaque non qui quo.
+        <input />
+         Lorem ipsum dolor sit amet consectetur
         adipisicing elit. Velit accusamus expedita perspiciatis deserunt minus
         facere exercitationem laudantium vero. Voluptas modi rem, unde eveniet
         corrupti officiis sed eaque non qui quo. Lorem ipsum dolor sit amet
         consectetur adipisicing elit. Velit accusamus expedita perspiciatis
         deserunt minus facere exercitationem laudantium vero. Voluptas modi rem,
         unde eveniet corrupti officiis sed eaque non qui quo.
-        <input />
       </Flex>
       <Flex
         vertical
