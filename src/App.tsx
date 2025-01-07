@@ -19,6 +19,9 @@ const App = () => {
         exercitationem laudantium vero. Voluptas modi rem, unde eveniet corrupti
         officiis sed eaque non qui quo.
         <input />
+        <input />
+        <input />
+        <input />
          Lorem ipsum dolor sit amet consectetur
         adipisicing elit. Velit accusamus expedita perspiciatis deserunt minus
         facere exercitationem laudantium vero. Voluptas modi rem, unde eveniet
