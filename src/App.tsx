@@ -1,64 +1,39 @@
-import React, { useState } from "react";
-import type { DrawerProps, RadioChangeEvent } from "antd";
-import { Button, Drawer, Radio, Space } from "antd";
+import { Button, Flex } from "antd";
 
-const App: React.FC = () => {
-  const [open, setOpen] = useState(false);
-  const [placement, setPlacement] = useState<DrawerProps["placement"]>("left");
-
-  const showDrawer = () => {
-    setOpen(true);
-  };
-
-  const onClose = () => {
-    setOpen(false);
-  };
-
-  const onChange = (e: RadioChangeEvent) => {
-    setPlacement(e.target.value);
-  };
-
+const App = () => {
   return (
-    <>
-      <Space>
-        <Radio.Group value={placement} onChange={onChange}>
-          <Radio value="top">top</Radio>
-          <Radio value="right">right</Radio>
-          <Radio value="bottom">bottom</Radio>
-          <Radio value="left">left</Radio>
-        </Radio.Group>
-        <Button type="primary" onClick={showDrawer}>
-          Open
-        </Button>
-      </Space>
-      <input type="text" />
-      <Drawer
-        title="Basic Drawer"
-        placement={placement}
-        closable={false}
-        onClose={onClose}
-        open={open}
-        key={placement}
-        // height={"fit-content"}
-        style={{ height: "auto" }} // Dynamically adjusts height
-        styles={{body:{overflow: "visible"}}}
-        bodyStyle={{ overflow: "visible" }}
+    <Flex vertical>
+      <Flex style={{ fontSize: "24px" }} vertical gap={10}>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit accusamus
+        expedita perspiciatis deserunt minus facere exercitationem laudantium
+        vero. Voluptas modi rem, unde eveniet corrupti officiis sed eaque non
+        qui quo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
+        accusamus expedita perspiciatis deserunt minus facere exercitationem
+        laudantium vero. Voluptas modi rem, unde eveniet corrupti officiis sed
+        eaque non qui quo. Lorem ipsum dolor sit amet consectetur adipisicing
+        elit. Velit accusamus expedita perspiciatis deserunt minus facere
+        exercitationem laudantium vero. Voluptas modi rem, unde eveniet corrupti
+        officiis sed eaque non qui quo. Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Velit accusamus expedita perspiciatis deserunt minus
+        facere exercitationem laudantium vero. Voluptas modi rem, unde eveniet
+        corrupti officiis sed eaque non qui quo. Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Velit accusamus expedita perspiciatis
+        deserunt minus facere exercitationem laudantium vero. Voluptas modi rem,
+        unde eveniet corrupti officiis sed eaque non qui quo.
+        <input/>
+      </Flex>
+      <Flex
+        vertical
+        style={{
+          position: "fixed",
+          width: "100%",
+          bottom: "0",
+          paddingBottom: "20px",
+        }}
       >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis et,
-        similique, veniam inventore fugit quam nemo sunt eum optio dolores,
-        fugiat sed ad porro dolorem quaerat quidem perspiciatis qui. Temporibus.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit velit
-        fugiat fuga maiores nemo. Voluptatem dolores est veniam laborum magni
-        ipsam corrupti voluptates, similique perferendis quis inventore, itaque
-        recusandae tempore. Lorem ipsum dolor, sit amet consectetur adipisicing
-        elit. Velit laboriosam enim eius, molestiae, hic facilis dolorum
-        cupiditate nemo, praesentium asperiores expedita quaerat rerum inventore
-        voluptatum nobis id libero quos quasi. Lorem ipsum dolor sit amet
-        consectetur adipisicing elit. Mollitia vero, totam quaerat, in quasi at
-        quae veritatis explicabo ullam beatae accusamus. Soluta impedit ipsam
-        aliquid eligendi ducimus asperiores itaque et?
-      </Drawer>
-    </>
+        <Button>CLICK ME</Button>
+      </Flex>
+    </Flex>
   );
 };
 
