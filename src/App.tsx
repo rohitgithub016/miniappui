@@ -1,6 +1,6 @@
 const App = () => {
   return (
-    <div>
+    <div style={{background: 'white'}}>
       <h1>Header</h1>
 
       <p>
