@@ -1,7 +1,13 @@
 @font-face {
-  font-family: "Custom";
-  src: local("PermanentMarker-Regular"),
-  url("./assets/fonts/PermanentMarker-Regular.ttf") format("truetype") 
+  font-family: 'Scandia-Regular';
+  font-weight: 100;
+  src: url(/src/assets/fonts/Scandia-Regular.ttf) format("truetype")
+}
+
+@font-face {
+  font-family: 'Scandia-Medium';
+  font-weight: 100;
+  src: url(/src/assets/fonts/Scandia-Medium.ttf) format("truetype")
 }
 
 html, body, #root {
@@ -9,7 +15,7 @@ html, body, #root {
   height: 100%;
   overflow: hidden;
   overscroll-behavior: none;
-  font-family: "Custom";
+  font-family: "Scandia-Medium";
 }
 #root {
   /* Preserve scrolling behavior */
