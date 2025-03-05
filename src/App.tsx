@@ -1,18 +1,35 @@
+import WebApp from "@twa-dev/sdk";
+
 const App = () => {
+  const lorem =
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ratione nisi perferendis omnis rerum. Quis blanditiis vitae laborum ullam, fugit nesciunt numquam consequatur, exercitationem sunt labore ducimus, eum consequuntur.Atque";
+  const handleDownload = () => {
+    WebApp?.downloadFile({
+      file_name: "h",
+      url: "https://www.stats.govt.nz/assets/Uploads/Annual-enterprise-survey/Annual-enterprise-survey-2023-financial-year-provisional/Download-data/annual-enterprise-survey-2023-financial-year-provisional.csv",
+    });
+  };
+
+  console.log()
+
+  console.log(WebApp)
   return (
     <div style={{ background: "white" }}>
-      <h1>Header</h1>
-      <h2>Header</h2>
-      <h3>Header</h3>
-      <h4>Header</h4>
-      <h5>Header</h5>
-
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit ipsum
-        quibusdam magnam! Voluptates distinctio porro magnam, quam non, adipisci
-        corrupti id commodi quasi veniam ad nesciunt tempora, maxime accusantium
-        doloribus.
-      </p>
+      <div
+        style={{
+          position: "sticky",
+          top: "0px",
+          zIndex: 1,
+          backgroundColor: "#FFF",
+        }}
+      >
+        <h1>hello</h1>
+        <p>sdafasdfasdf</p>
+      </div>
+      <div>
+        <p>{lorem}</p>
+      </div>
+      <button onClick={handleDownload}>Hello</button>
     </div>
   );
 };
