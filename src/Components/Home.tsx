@@ -34,9 +34,9 @@ const Home = () => {
     WebApp?.BackButton?.onClick(()=>{
       navigate("/")
     })
-    return () => WebApp?.BackButton?.onClick(()=>{
+    return () => {WebApp?.BackButton?.onClick(()=>{
       history.back()
-    })
+    })}
   },[])
 
   return (

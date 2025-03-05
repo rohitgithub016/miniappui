@@ -15,7 +15,7 @@ const AboutUs = () => {
   useEffect(() => {
     dispatch(increment())
     WebApp?.BackButton?.onClick(handleBack);
-    return () => WebApp?.BackButton.offClick(handleBack);
+    return () => {WebApp?.BackButton.offClick(handleBack)};
   }, []);
   return <div>
     <button onClick={handleBack}>AboutUs</button>

@@ -10,10 +10,12 @@ const Career = () => {
   const handleBack = () => {
     history.back();
   }
-  useEffect(()=>{
-    WebApp.BackButton.onClick(handleBack)
-    return () => WebApp.BackButton.offClick(handleBack)
-  },[])
+  useEffect(() => {
+    WebApp.BackButton.onClick(handleBack);
+    return () => {
+      WebApp.BackButton.offClick(handleBack);
+    };
+  }, []);
   return (
     <div>
       Career
