@@ -5,7 +5,7 @@ const App = () => {
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ratione nisi perferendis omnis rerum. Quis blanditiis vitae laborum ullam, fugit nesciunt numquam consequatur, exercitationem sunt labore ducimus, eum consequuntur.Atque";
   const handleDownload = () => {
     WebApp?.downloadFile({
-      file_name: "h",
+      file_name: "h.csv",
       url: "https://www.stats.govt.nz/assets/Uploads/Annual-enterprise-survey/Annual-enterprise-survey-2023-financial-year-provisional/Download-data/annual-enterprise-survey-2023-financial-year-provisional.csv",
     });
   };
