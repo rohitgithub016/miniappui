@@ -1,37 +1,26 @@
 import WebApp from "@twa-dev/sdk";
-import { useState } from "react";
 
 const App = () => {
-
   const handleDownload = () => {
-    WebApp?.downloadFile({
-      file_name: "h.csv",
-      url: "",
-    });
+    WebApp?.openLink(
+      "https://hubz-transaction-subscriber.s3.ap-southeast-1.amazonaws.com/csv/subscribers_67d0f6bfe692857b0a53f19d_20250313175147969.csv"
+    );
   };
 
-  const [d, setD] = useState("");
-const description = (event: React.ChangeEvent<HTMLInputElement>) => {
-  setD(event?.target?.value)
-}
+  const handleDownload1 = () => {
+    const link = document.createElement("a");
+    link.href =
+      "https://hubz-transaction-subscriber.s3.ap-southeast-1.amazonaws.com/csv/subscribers_67d0f6bfe692857b0a53f19d_20250313175147969.csv";
+    link.setAttribute("download", `GroupMem.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div style={{ background: "white" }}>
-      <div
-        style={{
-          position: "sticky",
-          top: "0px",
-          zIndex: 1,
-          backgroundColor: "#FFF",
-        }}
-      >
-        <h1>hello</h1>
-        <p>sdafasdfasdf</p>
-        <input onChange={description}/>
-      </div>
-      <div>
-        <p>{d}</p>
-      </div>
       <button onClick={handleDownload}>Hello</button>
+      <button onClick={handleDownload1}>Hello1</button>
     </div>
   );
 };
