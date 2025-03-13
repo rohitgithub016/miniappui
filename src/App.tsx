@@ -1,10 +1,8 @@
 import WebApp from "@twa-dev/sdk";
-import { Input } from "antd";
 import { useState } from "react";
 
 const App = () => {
-  const lorem =
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ratione nisi perferendis omnis rerum. Quis blanditiis vitae laborum ullam, fugit nesciunt numquam consequatur, exercitationem sunt labore ducimus, eum consequuntur.Atque";
+
   const handleDownload = () => {
     WebApp?.downloadFile({
       file_name: "h.csv",
