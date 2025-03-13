@@ -1,5 +1,6 @@
 import WebApp from "@twa-dev/sdk";
 import { Input } from "antd";
+import { useState } from "react";
 
 const App = () => {
   const lorem =
@@ -11,9 +12,10 @@ const App = () => {
     });
   };
 
-  console.log()
-
-  console.log(WebApp)
+  const [d, setD] = useState("");
+const description = (event: React.ChangeEvent<HTMLInputElement>) => {
+  setD(event?.target?.value)
+}
   return (
     <div style={{ background: "white" }}>
       <div
@@ -26,10 +28,10 @@ const App = () => {
       >
         <h1>hello</h1>
         <p>sdafasdfasdf</p>
-        <Input  inputMode="decimal"/>
+        <input onChange={description}/>
       </div>
       <div>
-        <p>{lorem}</p>
+        <p>{d}</p>
       </div>
       <button onClick={handleDownload}>Hello</button>
     </div>
