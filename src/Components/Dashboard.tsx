@@ -22,7 +22,7 @@ const Dashboard = () => {
             style={{
               color: "#FFF",
               fontFamily: "Scandia-Medium",
-              fontSize: "24.181px",
+              fontSize: "27.181px",
               fontStyle: "normal",
               fontWeight: 700,
               lineHeight: "36.476px",
@@ -35,7 +35,7 @@ const Dashboard = () => {
             style={{
               color: "#FFF",
               fontFamily: "Scandia-Medium",
-              fontSize: "24.181px",
+              fontSize: "27.181px",
               fontStyle: "normal",
               fontWeight: 700,
               lineHeight: "36.476px",
@@ -60,7 +60,7 @@ const Dashboard = () => {
             style={{
               color: "#FFF",
               fontFamily: "Scandia-Medium",
-              fontSize: "24.181px",
+              fontSize: "27.181px",
               fontStyle: "normal",
               fontWeight: 700,
               lineHeight: "36.476px",
@@ -73,7 +73,7 @@ const Dashboard = () => {
             style={{
               color: "#FFF",
               fontFamily: "Scandia-Medium",
-              fontSize: "29.181px",
+              fontSize: "27.181px",
               fontStyle: "normal",
               fontWeight: 700,
               lineHeight: "36.476px",
@@ -98,7 +98,7 @@ const Dashboard = () => {
             style={{
               color: "#FFF",
               fontFamily: "Scandia-Medium",
-              fontSize: "29.181px",
+              fontSize: "27.181px",
               fontStyle: "normal",
               fontWeight: 700,
               lineHeight: "36.476px",
@@ -111,7 +111,7 @@ const Dashboard = () => {
             style={{
               color: "#FFF",
               fontFamily: "Scandia-Medium",
-              fontSize: "29.181px",
+              fontSize: "27.181px",
               fontStyle: "normal",
               fontWeight: 700,
               lineHeight: "36.476px",
