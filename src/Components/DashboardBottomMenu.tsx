@@ -17,7 +17,7 @@ const DashboardBottomMenu = ({
     { name: "Airdrop", value: "airdrop", Icon: AirdropSVG },
   ];
   return (
-    <Flex className="dashboard-bottom-navbar">
+    <Flex className="dashboard-bottom-navbar" style={{background: 'yellow'}}>
       {menu.map(({ name, value, Icon }) => (
         <Flex
           vertical
