@@ -8,6 +8,8 @@ const App = () => {
   const navigate = useNavigate();
 
   useEffect(()=>{
+    WebApp.BackButton.isVisible = true;
+    WebApp.BackButton.show();
     if(location?.pathname === "/about-us"){
       WebApp?.BackButton?.onClick(()=>{
         navigate("/");
