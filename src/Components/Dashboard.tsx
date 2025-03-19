@@ -1,6 +1,5 @@
 import { Flex, Typography } from "antd";
 import  { useState } from "react";
-import FloatingButton from "./FloatingButton";
 import NewUserCard from "./NewUserCard";
 
 const Dashboard = () => {
