@@ -19,10 +19,11 @@ const App = () => {
         history?.back();
       })
     }
-  },[])
+  },[location?.pathname])
+  
   return (
     <div>
-      <button onClick={()=>navigate("/career")}>Career</button>
+      <button onClick={()=>navigate("/career")}>HOME PAGE</button>
     </div>
   )
 }
