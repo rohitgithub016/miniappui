@@ -33,7 +33,7 @@ const NewUserCard = ({ data }: { data: NewUserCard }) => {
           }}
           vertical
         >
-            <img width="100%" height="300" src={data?.image} />
+            <img width="100%" height="250" src={data?.image} />
           <Flex
             vertical
             style={{
