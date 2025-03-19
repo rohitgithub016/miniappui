@@ -50,7 +50,7 @@ const Dashboard = () => {
         "Allow members to connect a wallet to unlock Web3 tools like airdrops, token gating, analytics, and more.",
       clickHandler: () => {},
       image:
-        "https://s3-hubz-dashboard-images.s3.ap-southeast-1.amazonaws.com/gateKeeper.png",
+        "tonlink.png",
     },
     {
       label: "Token Gating",
@@ -88,7 +88,7 @@ const Dashboard = () => {
         "Verify members by their token holdings to provide access to a private Telegram group.",
       clickHandler: () => {},
       image:
-        "https://s3-hubz-dashboard-images.s3.ap-southeast-1.amazonaws.com/chainSync.png",
+        "tokenGating.png",
     },
     {
       label: "Subscriptions",
@@ -126,7 +126,7 @@ const Dashboard = () => {
         "Earn on Telegram by letting anyone subscribe to your group for premium content.",
       clickHandler: () => {},
       image:
-        "https://s3-hubz-dashboard-images.s3.ap-southeast-1.amazonaws.com/accessPass.png",
+        "subscription.png",
     },
   ];
 
@@ -201,19 +201,6 @@ const Dashboard = () => {
 
           <NewUserCard data={data} />
         </Flex>
-      </Flex>
-      <Flex
-        style={{
-          position: "fixed",
-          bottom: 100,
-          width: "calc(100vw - 40px)",
-        }}
-        vertical
-      >
-        <FloatingButton
-          text={"Setup Subscription"}
-          clickHandler={() => undefined}
-        />
       </Flex>
     </Flex>
   );
