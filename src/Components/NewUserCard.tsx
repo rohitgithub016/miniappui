@@ -10,10 +10,7 @@ export interface NewUserCard {
 
 const NewUserCard = ({ data }: { data: NewUserCard }) => {
 
-  // Fix this using ref
-  const getHeight = () => {
-    return "calc(95vh - 372px)";
-  };
+
 
   return (
     <Flex vertical>
@@ -31,18 +28,20 @@ const NewUserCard = ({ data }: { data: NewUserCard }) => {
           style={{
             background:
               "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.20) 102.14%)",
-            height: getHeight(),
+            height: "100vh",
             padding: "20px",
             position: "relative",
           }}
           vertical
         >
-            <img width="100%" height="100%" src={data?.image} />
+            <img width="100%" height="456" src={data?.image} />
           <Flex
             vertical
             style={{
               padding: "0px 1.45px 0px 5.39px",
+              width: "100%"
             }}
+            justify="flex-start"
           >
             {data?.text}
           </Flex>
