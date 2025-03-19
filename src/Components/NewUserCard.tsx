@@ -35,15 +35,12 @@ const NewUserCard = ({ data }: { data: NewUserCard }) => {
             padding: "20px",
             position: "relative",
           }}
+          vertical
         >
-          <Flex align="center" justify="center" style={{ width: "100%" }}>
             <img width="100%" height="100%" src={data?.image} />
-          </Flex>
           <Flex
             vertical
             style={{
-              position: "absolute",
-              bottom: 22,
               padding: "0px 1.45px 0px 5.39px",
             }}
           >
