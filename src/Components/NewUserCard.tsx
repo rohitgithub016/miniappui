@@ -28,13 +28,12 @@ const NewUserCard = ({ data }: { data: NewUserCard }) => {
           style={{
             background:
               "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.20) 102.14%)",
-            height: "100vh",
             padding: "20px",
             position: "relative",
           }}
           vertical
         >
-            <img width="100%" height="456" src={data?.image} />
+            <img width="100%" height="300" src={data?.image} />
           <Flex
             vertical
             style={{
