@@ -1,17 +1,36 @@
-import { Flex } from "antd";
-import SupportIconSVG from "./assets/SupportIconSVG";
-import ConnectWalletButton from "./Components/ConnectWalletButton";
-import Dashboard from "./Components/Dashboard";
-import DashboardBottomMenu from "./Components/DashboardBottomMenu";
+// import { Flex } from "antd";
+// import SupportIconSVG from "./assets/SupportIconSVG";
+// import ConnectWalletButton from "./Components/ConnectWalletButton";
+// import Dashboard from "./Components/Dashboard";
+// import DashboardBottomMenu from "./Components/DashboardBottomMenu";
 import WebApp from "@twa-dev/sdk";
+import { Flex } from "antd";
 
 const App = () => {
-  const handleB = () => {
-    WebApp.openLink("https://telegram.org/tos/mini-apps", { try_instant_view: true });
+  const handle1 = () => {
+    WebApp.HapticFeedback.impactOccurred('medium')
+  }
+  const handle2 = () => {
+    WebApp.HapticFeedback.impactOccurred('heavy')
+  }
+  const handle3 = () => {
+    WebApp.HapticFeedback.notificationOccurred('success')
+  }
+  const handle4 = () => {
+    WebApp.HapticFeedback.notificationOccurred('warning')
+  } 
+   const handle5 = () => {
+    WebApp.HapticFeedback.notificationOccurred('error')
   }
   return (
-    <>
-      <Flex
+    <Flex gap={20}>
+      <button onClick={handle1}> Medium</button>
+      <button onClick={handle2}> Heavy</button>
+      <button onClick={handle3}> Success</button>
+      <button onClick={handle4}> Warning</button>
+      <button onClick={handle5}> Error</button>
+
+      {/* <Flex
         vertical
         style={{ overflow: "auto", height: "90vh" }}
         id="container"
@@ -41,8 +60,8 @@ const App = () => {
       <DashboardBottomMenu
         selectedMenu={"home"}
         handleChangeMenu={() => {}}
-      />
-    </>
+      /> */}
+    </Flex>
   );
 };
 
