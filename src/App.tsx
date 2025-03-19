@@ -3,8 +3,12 @@ import SupportIconSVG from "./assets/SupportIconSVG";
 import ConnectWalletButton from "./Components/ConnectWalletButton";
 import Dashboard from "./Components/Dashboard";
 import DashboardBottomMenu from "./Components/DashboardBottomMenu";
+import WebApp from "@twa-dev/sdk";
 
 const App = () => {
+  const handleB = () => {
+    WebApp.openTelegramLink("https://telegram.org/tos/mini-apps");
+  }
   return (
     <>
       <Flex
@@ -12,6 +16,7 @@ const App = () => {
         style={{ overflow: "auto", height: "90vh" }}
         id="container"
       >
+        <button onClick={handleB}>Hello</button>
         <Flex style={{ padding: "20px 20px 0px 20px" }}>
           <Flex justify="space-between" style={{ width: "100%" }}>
             <ConnectWalletButton />
