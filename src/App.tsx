@@ -7,7 +7,7 @@ import WebApp from "@twa-dev/sdk";
 
 const App = () => {
   const handleB = () => {
-    WebApp.openTelegramLink("https://telegram.org/tos/mini-apps");
+    WebApp.openLink("https://telegram.org/tos/mini-apps");
   }
   return (
     <>
