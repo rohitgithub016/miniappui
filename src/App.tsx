@@ -4,14 +4,13 @@ const App = () => {
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   const handleFocus = () => {
-    setTimeout(() => {
+    console.log("hello");
+    if (inputRef.current) {
       if (inputRef.current) {
-        inputRef.current.setSelectionRange(
-          inputRef.current.value.length,
-          inputRef.current.value.length
-        );
+        inputRef.current.selectionStart = inputRef.current.selectionEnd =
+          inputRef.current.value.length;
       }
-    }, 0);
+    }
   };
 
   return (
