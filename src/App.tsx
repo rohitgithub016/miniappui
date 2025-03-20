@@ -21,7 +21,7 @@ const App = () => {
         onFocus={handleFocus}
         defaultValue={2343}
         type="number"
-        style={{ width: "100%", textAlign: "right" }}
+        style={{ textAlign: "right" }}
       />
     </div>
   );
