@@ -1,31 +1,30 @@
-
-import WebApp from '@twa-dev/sdk';
-import { useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useRef } from "react";
 
 const App = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
+  const inputRef = useRef<HTMLInputElement | null>(null);
 
-  useEffect(()=>{
-    WebApp.BackButton.isVisible = true;
-    WebApp.BackButton.show();
-    if(location?.pathname === "/about-us"){
-      WebApp?.BackButton?.onClick(()=>{
-        navigate("/");
-      })
-    } else {
-      WebApp?.BackButton?.onClick(()=>{
-        history?.back();
-      })
-    }
-  },[location?.pathname])
-  
+  const handleFocus = () => {
+    setTimeout(() => {
+      if (inputRef.current) {
+        inputRef.current.setSelectionRange(
+          inputRef.current.value.length,
+          inputRef.current.value.length
+        );
+      }
+    }, 0);
+  };
+
   return (
     <div>
-      <button onClick={()=>navigate("/career")}>HOME PAGE</button>
+      <input
+        ref={inputRef}
+        onFocus={handleFocus}
+        defaultValue={2343}
+        type="number"
+        style={{ width: "100%", textAlign: "right" }}
+      />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
