@@ -1,3 +1,4 @@
+import WebApp from "@twa-dev/sdk";
 import { useRef, useState } from "react";
 
 const MoveCursorToEnd = () => {
@@ -14,6 +15,8 @@ const MoveCursorToEnd = () => {
   };
 
   console.log(firstTime)
+
+  console.log(WebApp?.viewportHeight)
 
   return (
     <div className="flex flex-col items-center gap-4 p-4">
