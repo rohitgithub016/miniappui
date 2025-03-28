@@ -15,7 +15,7 @@ const MoveCursorToEnd = () => {
   };
   useEffect(() => {
     console.log((window as any)?.webkit, 'webkit object');
-    if ((window as any)?.webkit && (window as any)?.webkit?.messageHandlers) {
+    if ((window as any)?.webkit && ((window as any)?.webkit as any)?.messageHandlers) {
       (window as any).webkit.messageHandlers.iOS.postMessage({ type: "showDoneButton" });
     }
   }, []);
