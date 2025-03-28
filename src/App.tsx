@@ -1,5 +1,5 @@
 import WebApp from "@twa-dev/sdk";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const MoveCursorToEnd = () => {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -13,6 +13,12 @@ const MoveCursorToEnd = () => {
       inputRef.current.setSelectionRange(length, length);
     }
   };
+  useEffect(() => {
+    console.log((window as any)?.webkit);
+    if ((window as any)?.webkit && (window as any)?.webkit?.messageHandlers) {
+      (window as any).webkit.messageHandlers.iOS.postMessage({ type: "showDoneButton" });
+    }
+  }, []);
 
   console.log(firstTime)
 
