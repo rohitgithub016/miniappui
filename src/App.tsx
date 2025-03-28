@@ -21,6 +21,7 @@ const MoveCursorToEnd = () => {
   return (
     <div className="flex flex-col items-center gap-4 p-4">
       <input 
+      type="number"
         ref={inputRef} 
         defaultValue="Type here..." 
         style={{textAlign: 'end'}}
