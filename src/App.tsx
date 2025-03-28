@@ -20,15 +20,15 @@ const MoveCursorToEnd = () => {
 
   return (
     <div className="flex flex-col items-center gap-4 p-4">
-      <input 
-      type="number"
-      inputmode="numeric"
-        ref={inputRef} 
-        defaultValue="Type here..." 
-        style={{textAlign: 'end'}}
+      <input
+        inputMode="numeric"
+        type="tel"
+        ref={inputRef}
+        defaultValue="Type here..."
+        style={{ textAlign: 'end' }}
         onClick={firstTime ? moveCursorToEnd : () => undefined}
-        onKeyDown={()=>setTime(false)} 
-        onBlur={()=>{
+        onKeyDown={() => setTime(false)}
+        onBlur={() => {
           setTime(true)
         }}
       />
