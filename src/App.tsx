@@ -14,9 +14,9 @@ const MoveCursorToEnd = () => {
     }
   };
   useEffect(() => {
-    console.log((window as any)?.webkit, 'webkit object');
+    console.log((window as any)?.webkit, 'webkit object', ((window as any)?.webkit as any)?.messageHandlers);
     if ((window as any)?.webkit && ((window as any)?.webkit as any)?.messageHandlers) {
-      (window as any).webkit.messageHandlers.iOS.postMessage({ type: "showDoneButton" });
+      // (window as any).webkit.messageHandlers.iOS.postMessage({ type: "showDoneButton" });
     }
   }, []);
 
