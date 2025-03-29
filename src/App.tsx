@@ -26,6 +26,7 @@ const MoveCursorToEnd = () => {
 
   useEffect(()=>{
     console.log(WebApp?.themeParams)
+    WebApp?.setHeaderColor("#1a1a1a")
   },[])
 
   return (
