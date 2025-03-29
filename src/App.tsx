@@ -24,6 +24,10 @@ const MoveCursorToEnd = () => {
 
   console.log(WebApp?.headerColor)
 
+  useEffect(()=>{
+    WebApp?.setHeaderColor("#000000");
+  },[])
+
   return (
     <div className="flex flex-col items-center gap-4 p-4">
       <input
