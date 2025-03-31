@@ -8,6 +8,8 @@ body {
   margin: 0px;
   box-sizing: border-box;
   overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
