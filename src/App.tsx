@@ -1,48 +1,26 @@
-import WebApp from "@twa-dev/sdk";
-import { useEffect, useRef, useState } from "react";
-
+import { Flex, Typography } from "antd";
 const MoveCursorToEnd = () => {
-  const inputRef = useRef<HTMLInputElement>(null);
-  const [firstTime, setTime] = useState(true);
-
-  const moveCursorToEnd = () => {
-    console.log("asdfasdf")
-    if (inputRef.current) {
-      const length = inputRef.current.value.length;
-      inputRef.current.focus();
-      inputRef.current.setSelectionRange(length, length);
-    }
-  };
-  useEffect(() => {
-    console.log((window as any)?.webkit, 'webkit object', ((window as any)?.webkit as any)?.messageHandlers);
-    if ((window as any)?.webkit && ((window as any)?.webkit as any)?.messageHandlers) {
-      console.log(((window as any)?.webkit.messageHandlers as any)?.iOS);
-    }
-  }, []);
-
-  console.log(firstTime)
-
-  console.log(WebApp?.headerColor)
-
-  useEffect(()=>{
-    console.log(WebApp?.themeParams)
-    WebApp?.setHeaderColor("#000000")
-  },[])
-
   return (
-    <div className="flex flex-col items-center gap-4 p-4">
-      <input
-        inputMode="numeric"
-        type="tel"
-        ref={inputRef}
-        defaultValue="Type here..."
-        style={{ textAlign: 'end' }}
-        onClick={firstTime ? moveCursorToEnd : () => undefined}
-        onKeyDown={() => setTime(false)}
-        onBlur={() => {
-          setTime(true)
-        }}
-      />
+    <div style={{ padding: "20px" }}>
+      <Flex style={{ padding: "10px" }} vertical gap={20}>
+        <Typography.Title
+          level={1}
+          style={{
+            fontSize: "40px",
+            fontWeight: "bold",
+            fontFamily: "Scandia-Medium",
+          }}
+        >
+          HELLO WORLD
+        </Typography.Title>
+        <Typography.Paragraph
+          style={{ fontFamily: "Scandia-Regular", fontSize: "18px" }}
+        >
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis, beatae
+          neque ratione iusto et ullam odit quam aut. Harum, dolore sed. Modi
+          similique ipsum accusamus doloribus molestias sunt itaque harum.
+        </Typography.Paragraph>
+      </Flex>
     </div>
   );
 };
