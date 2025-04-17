@@ -2,11 +2,11 @@ import WebApp from "@twa-dev/sdk";
 import { Button, Flex, Typography } from "antd";
 const MoveCursorToEnd = () => {
   const handleOpen = () => {
-    WebApp?.openTelegramLink("https://t.me/OrbsNetwork");
+    WebApp?.openTelegramLink("https://t.me/+UmFXFwHjYaQ4ZjY1");
   }
 
   const handleOpen1 = () => {
-    WebApp?.openLink("https://t.me/OrbsNetwork");
+    WebApp?.openLink("https://t.me/+UmFXFwHjYaQ4ZjY1");
   }
 
   console.log(WebApp?.platform);
