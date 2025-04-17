@@ -3,14 +3,17 @@ import { Button, Flex, Typography } from "antd";
 const MoveCursorToEnd = () => {
   const handleOpen = () => {
     WebApp?.openTelegramLink("https://t.me/+s5TEEXMHx3wzZjBl");
+    WebApp?.close();
   }
 
   const handleOpen1 = () => {
     WebApp?.openLink("https://t.me/+s5TEEXMHx3wzZjBl");
+    WebApp?.close();
   }
 
   const handleOpen2 = () => {
     window?.open("https://t.me/+s5TEEXMHx3wzZjBl", "_self");
+    WebApp?.close();
   }
 
   console.log(WebApp?.platform);
