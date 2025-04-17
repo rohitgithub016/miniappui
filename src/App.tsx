@@ -9,6 +9,10 @@ const MoveCursorToEnd = () => {
     WebApp?.openLink("https://t.me/+UmFXFwHjYaQ4ZjY1");
   }
 
+  const handleOpen2 = () => {
+    window?.open("https://t.me/+UmFXFwHjYaQ4ZjY1", "_self");
+  }
+
   console.log(WebApp?.platform);
   return (
     <div style={{ padding: "20px" }}>
@@ -33,6 +37,8 @@ const MoveCursorToEnd = () => {
 
         <Button onClick={handleOpen} style={{color: 'red'}}>Click me</Button>
         <Button onClick={handleOpen1} style={{color: "red"}}> Click me one</Button>
+        <Button onClick={handleOpen2} style={{color: "red"}}> Click me two</Button>
+
 
       </Flex>
     </div>
