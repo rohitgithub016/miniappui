@@ -1,5 +1,15 @@
-import { Flex, Typography } from "antd";
+import WebApp from "@twa-dev/sdk";
+import { Button, Flex, Typography } from "antd";
 const MoveCursorToEnd = () => {
+  const handleOpen = () => {
+    WebApp?.openTelegramLink("https://t.me/OrbsNetwork");
+  }
+
+  const handleOpen1 = () => {
+    WebApp?.openLink("https://t.me/OrbsNetwork");
+  }
+
+  console.log(WebApp?.platform);
   return (
     <div style={{ padding: "20px" }}>
       <Flex style={{ padding: "10px" }} vertical gap={20}>
@@ -20,6 +30,10 @@ const MoveCursorToEnd = () => {
           neque ratione iusto et ullam odit quam aut. Harum, dolore sed. Modi
           similique ipsum accusamus doloribus molestias sunt itaque harum.
         </Typography.Paragraph>
+
+        <Button onClick={handleOpen} style={{color: 'red'}}>Click me</Button>
+        <Button onClick={handleOpen1} style={{color: "red"}}> Click me one</Button>
+
       </Flex>
     </div>
   );
