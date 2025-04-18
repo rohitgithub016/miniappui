@@ -2,17 +2,17 @@ import WebApp from "@twa-dev/sdk";
 import { Button, Flex, Typography } from "antd";
 const MoveCursorToEnd = () => {
   const handleOpen = () => {
-    WebApp?.openTelegramLink("https://t.me/+s5TEEXMHx3wzZjBl");
+    WebApp?.openTelegramLink("https://t.me/+UmFXFwHjYaQ4ZjY1");
     WebApp?.close();
   }
 
   const handleOpen1 = () => {
-    WebApp?.openLink("https://t.me/+s5TEEXMHx3wzZjBl");
+    WebApp?.openLink("https://t.me/+UmFXFwHjYaQ4ZjY1");
     WebApp?.close();
   }
 
   const handleOpen2 = () => {
-    window?.open("https://t.me/+s5TEEXMHx3wzZjBl", "_self");
+    window?.open("https://t.me/+UmFXFwHjYaQ4ZjY1", "_blank");
     WebApp?.close();
   }
 
