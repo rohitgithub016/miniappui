@@ -1,6 +1,10 @@
 import WebApp from "@twa-dev/sdk";
 import { Button, Flex, Typography } from "antd";
+ 
+
 const MoveCursorToEnd = () => {
+
+  console.log(import.meta.env.VITE_API_URL);
   const handleOpen = () => {
     WebApp?.openTelegramLink("https://t.me/+UmFXFwHjYaQ4ZjY1");
     WebApp?.close();
