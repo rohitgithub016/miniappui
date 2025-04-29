@@ -19,19 +19,26 @@ const App = () => {
       }}
     >
       <video
-        style={{ objectFit: "cover" }}
+        style={{
+          objectFit: "cover",
+          width: "100%",
+          height: "100%",
+        }}
         src="./bg.mp4"
         autoPlay
-        width={"100%"}
-        height={"100%"}
         loop
         muted
+        playsInline
       ></video>
-      <Flex vertical gap={16} style={{ position: "absolute", top: "50%", left: '35%' }}>
+      <Flex
+        vertical
+        gap={16}
+        style={{ position: "absolute", top: "50%", left: "35%" }}
+      >
         <img
           src="./logo.png"
           alt="Logo"
-          style={{ width: "50%", height: "100%",  }}
+          style={{ width: "50%", height: "100%" }}
         />
       </Flex>
     </div>
