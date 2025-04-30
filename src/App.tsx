@@ -33,12 +33,12 @@ const App = () => {
       <Flex
         vertical
         gap={16}
-        style={{ position: "absolute", top: "50%", left: "35%" }}
+        style={{ position: "absolute", top: "45%", left: "12%" }}
       >
         <img
           src="./logo.png"
           alt="Logo"
-          style={{ width: "50%", height: "100%" }}
+          style={{ width: "318px", height: "109px" }}
         />
       </Flex>
     </div>
