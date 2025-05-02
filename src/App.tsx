@@ -14,7 +14,7 @@ const App = () => {
   console.log( WebApp?.safeAreaInset);
   console.log( WebApp?.contentSafeAreaInset);
   return (
-    <Flex style={{padding: '30px', paddingTop: '60px'}}>
+    <Flex style={{padding: '30px', paddingTop: '80px'}}>
       <Typography.Title level={3}>Hello, Telegram Web App!</Typography.Title>
     </Flex>
   );
