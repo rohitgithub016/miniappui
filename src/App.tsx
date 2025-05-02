@@ -1,5 +1,5 @@
 import WebApp from "@twa-dev/sdk";
-import { Flex, Typography } from "antd";
+import { Flex } from "antd";
 import { useEffect } from "react";
 
 const App = () => {
