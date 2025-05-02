@@ -1,4 +1,16 @@
-body {
-    padding: 0px;
+:root {
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    height: 100vh;
+  }
+  
+  body {
+    background-color: #EFEFF4;
     margin: 0px;
-}
+    box-sizing: border-box;
+    overflow: hidden;
+    height: 100%;
+  }
