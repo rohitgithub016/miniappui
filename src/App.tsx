@@ -24,7 +24,7 @@ const App = () => {
           width: "100%",
           height: "100%",
         }}
-        src="./bg.mp4"
+        src="./splash.mp4"
         autoPlay
         loop
         muted
@@ -33,7 +33,9 @@ const App = () => {
       <Flex
         vertical
         gap={16}
-        style={{ position: "absolute", top: "45%", left: "12%" }}
+        style={{ position: "absolute", top: '45%', width: "100%" }}
+        justify="center"
+        align="center"
       >
         <img
           src="./logo.png"
