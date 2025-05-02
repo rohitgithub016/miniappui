@@ -6,6 +6,7 @@ const App = () => {
   useEffect(() => {
     WebApp.ready();
     if (WebApp) {
+      WebApp?.expand();
       WebApp.requestFullscreen();
     }
   }, []);
