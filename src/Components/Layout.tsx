@@ -22,7 +22,7 @@ const Layout = () => {
     }
   }, [location?.pathname]);
   return (
-    <div style={{ width: "100vw", height: "100vh", padding: 16, boxSizing: "border-box" }}>
+    <div style={{ width: "100vw", height: "100vh" }}>
       <Outlet />
     </div>
   );
