@@ -16,7 +16,7 @@ const App = () => {
   
   return (
     <Flex style={{padding: '20px', paddingTop: '90px'}}>
-      <Typography.Title level={3}>Hello, Telegram Web App!</Typography.Title>
+      <Typography.Title style={{fontWeight: 700}} className="txt" level={2}>Hello, Telegram Web App!</Typography.Title>
     </Flex>
   );
 };
