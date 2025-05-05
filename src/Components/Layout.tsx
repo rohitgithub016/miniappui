@@ -21,6 +21,7 @@ const Layout = () => {
       });
     }
   }, [location?.pathname]);
+  
   return (
     <div
       style={{
