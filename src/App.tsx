@@ -5,7 +5,7 @@ import { useEffect } from "react";
 const App = () => {
   useEffect(() => {
     WebApp.ready();
-    if (Number(WebApp?.version) >= 8) {
+    if (Number(WebApp?.version) >= 8 && WebApp?.platform !== "tdesktop") {
       WebApp?.expand();
       WebApp.requestFullscreen();
     }
