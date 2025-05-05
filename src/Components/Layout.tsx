@@ -24,7 +24,7 @@ const Layout = () => {
 
   const getPaddingTop = () => {
     if(WebApp?.platform === "tdesktop") {
-      return '20px';
+      return '0px';
     } else if (WebApp?.platform === "android") {
       return '20px';
     } else if (WebApp?.platform === "ios") { 
