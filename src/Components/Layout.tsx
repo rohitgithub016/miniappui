@@ -22,12 +22,24 @@ const Layout = () => {
     }
   }, [location?.pathname]);
 
+  const getPaddingTop = () => {
+    if(WebApp?.platform === "tdesktop") {
+      return '20px';
+    } else if (WebApp?.platform === "android") {
+      return '20px';
+    } else if (WebApp?.platform === "ios") { 
+      return '110px';
+    } else if (WebApp?.platform === "unknown") {
+      return '0px';
+    }
+  }
+
   return (
     <div
       style={{
         width: "100vw",
         height: "100vh",
-        paddingTop: "110px",
+        paddingTop: getPaddingTop(),
         backgroundColor: "red",
       }}
     >
