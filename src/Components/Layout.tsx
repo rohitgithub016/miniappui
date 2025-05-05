@@ -26,7 +26,7 @@ const Layout = () => {
     if(WebApp?.platform === "tdesktop") {
       return '0px';
     } else if (WebApp?.platform === "android") {
-      return '80px';
+      return '100px';
     } else if (WebApp?.platform === "ios") { 
       return '110px';
     } else if (WebApp?.platform === "unknown") {
