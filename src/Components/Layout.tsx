@@ -21,13 +21,13 @@ const Layout = () => {
       });
     }
   }, [location?.pathname]);
-  
+
   return (
     <div
       style={{
         width: "100vw",
         height: "100vh",
-        paddingTop: "90px",
+        paddingTop: "110px",
         backgroundColor: "red",
       }}
     >
