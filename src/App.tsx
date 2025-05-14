@@ -27,7 +27,8 @@ const App = () => {
   const handleClick = () => {
     WebApp?.onEvent("viewportChanged", () => {
       heightChanged = WebApp?.viewportStableHeight < viewportHeight;
-      console.log(viewportHeight);
+      console.log(WebApp.viewportHeight);
+      console.log(WebApp.viewportStableHeight);
       setV(false);
     });
   }
