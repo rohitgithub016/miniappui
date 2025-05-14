@@ -29,8 +29,9 @@ const App = () => {
       heightChanged = WebApp?.viewportStableHeight < viewportHeight;
       console.log("viewportHeight", WebApp.viewportHeight);
       console.log("viewportStableHeight", WebApp.viewportStableHeight);
-      if (WebApp?.viewportHeight === 852) {
+      if (WebApp?.viewportHeight === 852 || WebApp.viewportStableHeight == 852) {
         setV(true);
+        console.log("inside");
       }
       setV(false);
     });
