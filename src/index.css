@@ -2,5 +2,6 @@ html, body, #root {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #fff8dc; /* Match your app background */
+  background-color: #fff8dc; /* match the app background */
+  overflow: hidden;
 }

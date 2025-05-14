@@ -3,26 +3,27 @@ import { Button, Flex, Typography } from "antd";
 
 const App = () => {
   const [isKeyboardOpen, setIsKeyboardOpen] = useState(false);
-  const [viewportHeight, setViewportHeight] = useState(
-    window.visualViewport?.height || window.innerHeight
-  );
+  const [viewportHeight, setViewportHeight] = useState<number | null>(null);
   const [initialHeight, setInitialHeight] = useState<number | null>(null);
+
+  console.log(viewportHeight);
 
   useEffect(() => {
     const handleResize = () => {
-      const currentHeight = window.visualViewport?.height || window.innerHeight;
+      const height = window.visualViewport?.height || window.innerHeight;
 
-      if (initialHeight === null) {
-        setInitialHeight(currentHeight);
-      } else {
-        setIsKeyboardOpen(currentHeight < initialHeight - 100);
+      if (!initialHeight) {
+        setInitialHeight(height);
+        setViewportHeight(height);
+        return;
       }
 
-      setViewportHeight(currentHeight);
+      setViewportHeight(height);
+      setIsKeyboardOpen(height < initialHeight - 100); // 100px threshold
     };
 
     window.visualViewport?.addEventListener("resize", handleResize);
-    handleResize(); // trigger once on mount
+    handleResize(); // initial call
 
     return () => {
       window.visualViewport?.removeEventListener("resize", handleResize);
@@ -30,42 +31,62 @@ const App = () => {
   }, [initialHeight]);
 
   return (
-    <Flex
-      vertical
+    <div
       style={{
-        height: viewportHeight,
-        overflowY: "auto",
-        padding: "20px",
-        background: "#fff8dc", // light yellow background
+        height: "100%",
+        background: "#fff8dc", // light yellow
+        display: "flex",
+        flexDirection: "column",
+        overflow: "hidden",
       }}
     >
-      <Typography.Title level={2}>Telegram Mini App</Typography.Title>
+      <Flex
+        vertical
+        style={{
+          flexGrow: 1,
+          overflowY: "auto",
+          padding: 20,
+          background: "#fff8dc",
+        }}
+      >
+        <Typography.Title level={2}>Telegram Mini App</Typography.Title>
 
-      <input type="text" placeholder="Type here..." style={{ padding: "10px", marginBottom: "20px", width: "100%" }} />
-      <Typography.Text>
-        Some more content here to allow scrolling. The keyboard should not cause a black gap.
-      </Typography.Text>
+        <input
+          type="text"
+          placeholder="Type something..."
+          style={{ padding: 10, marginBottom: 20, width: "100%" }}
+        />
 
-      <div style={{ height: 300 }} />
+        <Typography.Text>
+          Filler content. Scroll down to see button behavior with keyboard open.
+        </Typography.Text>
 
-      <input type="text" placeholder="Second input..." style={{ padding: "10px", marginTop: "20px", width: "100%" }} />
+        <div style={{ height: 400 }} />
+
+        <input
+          type="text"
+          placeholder="More text input..."
+          style={{ padding: 10, marginTop: 20, width: "100%" }}
+        />
+      </Flex>
 
       {!isKeyboardOpen && (
-        <Flex
+        <div
           style={{
-            position: "fixed",
+            position: "absolute", // avoids fixed behavior bugs on Android
             bottom: 20,
             left: 20,
             right: 20,
+            backgroundColor: "#fff8dc", // ensure background is consistent
             zIndex: 100,
           }}
         >
           <Button block type="primary">
-            Fixed Bottom Button
+            Submit
           </Button>
-        </Flex>
+        </div>
       )}
-    </Flex>
+    </div>
   );
 };
 
