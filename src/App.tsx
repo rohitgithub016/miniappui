@@ -17,7 +17,7 @@ const App = () => {
   }, []);
 
 
-  const heightChanged =  WebApp?.viewportStableHeight < viewportHeight
+  let heightChanged =  WebApp?.viewportStableHeight < viewportHeight
 
   const handleChange = () => {
     console.log(viewportHeight);
@@ -32,6 +32,7 @@ const App = () => {
     console.log('Viewport changed');
     console.log('Current height:', viewport);
     console.log('Is expanded:', isExpanded);
+    heightChanged =  WebApp?.viewportStableHeight < viewportHeight
   });
 
   return (
