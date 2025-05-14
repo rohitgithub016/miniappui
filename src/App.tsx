@@ -29,6 +29,9 @@ const App = () => {
       heightChanged = WebApp?.viewportStableHeight < viewportHeight;
       console.log("viewportHeight", WebApp.viewportHeight);
       console.log("viewportStableHeight", WebApp.viewportStableHeight);
+      if (WebApp?.viewportHeight === 852) {
+        setV(true);
+      }
       setV(false);
     });
   };
