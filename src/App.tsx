@@ -26,6 +26,14 @@ const App = () => {
     console.log(heightChanged);
   }
 
+ WebApp?.onEvent('viewportChanged', () => {
+    const viewport = WebApp.viewportHeight;
+    const isExpanded = WebApp.isExpanded;
+    console.log('Viewport changed');
+    console.log('Current height:', viewport);
+    console.log('Is expanded:', isExpanded);
+  });
+
   return (
     <Flex
       style={{
