@@ -27,6 +27,14 @@ const App = () => {
 
   const heightChanged =  WebApp?.viewportStableHeight < viewportHeight
 
+  console.log(heightChanged);
+
+  const handleChange = () => {
+    console.log(viewportHeight);
+    console.log(WebApp?.viewportStableHeight);
+    console.log(viewportHeight);
+  }
+
   return (
     <Flex
       style={{
@@ -46,7 +54,7 @@ const App = () => {
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
         cupiditate
       </Typography.Title>
-      <input type="text" />
+      <input type="text" onChange={handleChange}/>
       <Typography.Title style={{ fontWeight: 700 }} className="txt" level={1}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
         cupiditate, id necessitatibus laudantium fuga, soluta quam molestias
