@@ -3,12 +3,12 @@ import { Button, Flex, Typography } from "antd";
 import { useEffect, useState } from "react";
 
 const App = () => {
-  const [viewportHeight, setViewportHeight] =useState(0);
+  const [viewportHeight, setViewportHeight] = useState(0);
   const [v, setV] = useState(true);
 
-  useEffect(()=>{
-    setViewportHeight(WebApp?.viewportStableHeight)
-  },[])
+  useEffect(() => {
+    setViewportHeight(WebApp?.viewportStableHeight);
+  }, []);
 
   useEffect(() => {
     WebApp.ready();
@@ -18,17 +18,20 @@ const App = () => {
     }
   }, []);
 
-
-  let heightChanged =  WebApp?.viewportStableHeight < viewportHeight
+  let heightChanged = WebApp?.viewportStableHeight < viewportHeight;
 
   const handleChange = () => {
     console.log("Hello");
-  }
+  };
 
- WebApp?.onEvent('viewportChanged', () => {
-    heightChanged =  WebApp?.viewportStableHeight < viewportHeight
-    setV(false)
-  });
+  console.log(v);
+
+  const handleClick = () => {
+    WebApp?.onEvent("viewportChanged", () => {
+      heightChanged = WebApp?.viewportStableHeight < viewportHeight;
+      setV(false);
+    });
+  }
 
   return (
     <Flex
@@ -49,7 +52,7 @@ const App = () => {
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
         cupiditate
       </Typography.Title>
-      <input type="text" onChange={handleChange}/>
+      <input type="text" onChange={handleChange} onClick={handleClick}/>
       <Typography.Title style={{ fontWeight: 700 }} className="txt" level={1}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
         cupiditate, id necessitatibus laudantium fuga, soluta quam molestias
@@ -57,7 +60,12 @@ const App = () => {
         aliquid nesciunt inventore. Excepturi.
       </Typography.Title>
       <Flex
-        style={{visibility: v ? "visible" : "hidden", bottom: 20, position: heightChanged ? "relative" : "fixed", width: "calc(100% - 40px)" }}
+        style={{
+          visibility: v ? "visible" : "hidden",
+          bottom: 20,
+          position: heightChanged ? "relative" : "fixed",
+          width: "calc(100% - 40px)",
+        }}
       >
         <Button style={{ width: "100%" }}>Click me</Button>
       </Flex>
