@@ -24,8 +24,6 @@ const App = () => {
     console.log("Hello");
   };
 
-  console.log(v);
-
   const handleClick = () => {
     WebApp?.onEvent("viewportChanged", () => {
       heightChanged = WebApp?.viewportStableHeight < viewportHeight;
@@ -52,7 +50,7 @@ const App = () => {
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
         cupiditate
       </Typography.Title>
-      <input type="text" onChange={handleChange} onClick={handleClick}/>
+      <input type="text" onChange={handleChange} onClick={handleClick} onBlur={()=>setV(true)}/>
       <Typography.Title style={{ fontWeight: 700 }} className="txt" level={1}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
         cupiditate, id necessitatibus laudantium fuga, soluta quam molestias
