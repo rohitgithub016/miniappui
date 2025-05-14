@@ -27,11 +27,11 @@ const App = () => {
   const handleClick = () => {
     WebApp?.onEvent("viewportChanged", () => {
       heightChanged = WebApp?.viewportStableHeight < viewportHeight;
-      console.log(WebApp.viewportHeight);
-      console.log(WebApp.viewportStableHeight);
+      console.log("viewportHeight", WebApp.viewportHeight);
+      console.log("viewportStableHeight", WebApp.viewportStableHeight);
       setV(false);
     });
-  }
+  };
 
   console.log(v);
 
@@ -54,7 +54,12 @@ const App = () => {
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
         cupiditate
       </Typography.Title>
-      <input type="text" onChange={handleChange} onClick={handleClick} onBlur={()=>setV(true)}/>
+      <input
+        type="text"
+        onChange={handleChange}
+        onClick={handleClick}
+        onBlur={() => setV(true)}
+      />
       <Typography.Title style={{ fontWeight: 700 }} className="txt" level={1}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
         cupiditate, id necessitatibus laudantium fuga, soluta quam molestias
