@@ -3,28 +3,26 @@ import { Button, Flex, Typography } from "antd";
 
 const App = () => {
   const [isKeyboardOpen, setIsKeyboardOpen] = useState(false);
+  const [viewportHeight, setViewportHeight] = useState(
+    window.visualViewport?.height || window.innerHeight
+  );
   const [initialHeight, setInitialHeight] = useState<number | null>(null);
-
-  console.log(isKeyboardOpen)
 
   useEffect(() => {
     const handleResize = () => {
-      const currentHeight = window.visualViewport?.height ?? window.innerHeight;
+      const currentHeight = window.visualViewport?.height || window.innerHeight;
 
       if (initialHeight === null) {
         setInitialHeight(currentHeight);
-        return;
+      } else {
+        setIsKeyboardOpen(currentHeight < initialHeight - 100);
       }
 
-      // If the height shrinks significantly, assume keyboard is open
-      setIsKeyboardOpen(currentHeight < initialHeight - 100);
+      setViewportHeight(currentHeight);
     };
 
-    // Listen to visualViewport changes
     window.visualViewport?.addEventListener("resize", handleResize);
-
-    // Initialize once on mount
-    handleResize();
+    handleResize(); // trigger once on mount
 
     return () => {
       window.visualViewport?.removeEventListener("resize", handleResize);
@@ -35,18 +33,24 @@ const App = () => {
     <Flex
       vertical
       style={{
-        height: "100vh",
-        overflow: "auto",
+        height: viewportHeight,
+        overflowY: "auto",
         padding: "20px",
-        background: "#fff8dc",
+        background: "#fff8dc", // light yellow background
       }}
     >
-      <Typography.Title level={2}>Telegram Mini App Test</Typography.Title>
-      <input type="text" placeholder="Type something..." />
-      <div style={{ height: 400 }} />
-      <input type="text" placeholder="Another input..." />
+      <Typography.Title level={2}>Telegram Mini App</Typography.Title>
 
-      {
+      <input type="text" placeholder="Type here..." style={{ padding: "10px", marginBottom: "20px", width: "100%" }} />
+      <Typography.Text>
+        Some more content here to allow scrolling. The keyboard should not cause a black gap.
+      </Typography.Text>
+
+      <div style={{ height: 300 }} />
+
+      <input type="text" placeholder="Second input..." style={{ padding: "10px", marginTop: "20px", width: "100%" }} />
+
+      {!isKeyboardOpen && (
         <Flex
           style={{
             position: "fixed",
@@ -60,7 +64,7 @@ const App = () => {
             Fixed Bottom Button
           </Button>
         </Flex>
-      }
+      )}
     </Flex>
   );
 };

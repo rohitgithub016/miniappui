@@ -1,39 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
-:root {
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "Space Grotesk", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    background-color: #EFEFF4;
-
-  }
-  
-  html {
-    height: 100vh;
-    font-family: "Space Grotesk", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    background-color: #EFEFF4;
-  }
-  
-  body {
-    background-color: #EFEFF4;
-    margin: 0px;
-    box-sizing: border-box;
-    overflow: hidden;
-    height: 100%;
-    font-family: "Space Grotesk", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-  }
-
-  .txt {
-    font-family: "Space Grotesk", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
-  }
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #fff8dc; /* Match your app background */
+}
