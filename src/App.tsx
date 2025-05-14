@@ -13,6 +13,7 @@ const App = () => {
 
   console.log(WebApp?.safeAreaInset?.top);
   console.log(WebApp?.contentSafeAreaInset?.top);
+  console.log(WebApp?.viewportStableHeight);
 
   return (
     <Flex
@@ -41,7 +42,7 @@ const App = () => {
         aliquid nesciunt inventore. Excepturi.
       </Typography.Title>
       <Flex
-        style={{ bottom: 20, width: "calc(100% - 40px)" }}
+        style={{ bottom: 20, position: "fixed", width: "calc(100% - 40px)" }}
       >
         <Button style={{ width: "100%" }}>Click me</Button>
       </Flex>
