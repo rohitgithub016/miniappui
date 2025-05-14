@@ -22,6 +22,7 @@ const App = () => {
   const handleChange = () => {
     console.log(viewportHeight);
     console.log(WebApp?.viewportStableHeight);
+    console.log(WebApp?.viewportStableHeight < viewportHeight)
     console.log(heightChanged);
   }
 
