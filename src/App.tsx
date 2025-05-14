@@ -4,10 +4,12 @@ import { useEffect, useState } from "react";
 
 const App = () => {
   const [viewportHeight, setViewportHeight] =useState(0);
+  const [v, setV] = useState(true);
 
   useEffect(()=>{
     setViewportHeight(WebApp?.viewportStableHeight)
   },[])
+
   useEffect(() => {
     WebApp.ready();
     if (Number(WebApp?.version) >= 8 && WebApp?.platform !== "tdesktop") {
@@ -20,19 +22,12 @@ const App = () => {
   let heightChanged =  WebApp?.viewportStableHeight < viewportHeight
 
   const handleChange = () => {
-    console.log(viewportHeight);
-    console.log(WebApp?.viewportStableHeight);
-    console.log(WebApp?.viewportStableHeight < viewportHeight)
-    console.log(heightChanged);
+    console.log("Hello");
   }
 
  WebApp?.onEvent('viewportChanged', () => {
-    const viewport = WebApp.viewportHeight;
-    const isExpanded = WebApp.isExpanded;
-    console.log('Viewport changed');
-    console.log('Current height:', viewport);
-    console.log('Is expanded:', isExpanded);
     heightChanged =  WebApp?.viewportStableHeight < viewportHeight
+    setV(false)
   });
 
   return (
@@ -62,7 +57,7 @@ const App = () => {
         aliquid nesciunt inventore. Excepturi.
       </Typography.Title>
       <Flex
-        style={{ bottom: 20, position: heightChanged ? "relative" : "fixed", width: "calc(100% - 40px)" }}
+        style={{visibility: v ? "visible" : "hidden", bottom: 20, position: heightChanged ? "relative" : "fixed", width: "calc(100% - 40px)" }}
       >
         <Button style={{ width: "100%" }}>Click me</Button>
       </Flex>
