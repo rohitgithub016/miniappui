@@ -31,6 +31,8 @@ const App = () => {
     });
   }
 
+  console.log(v);
+
   return (
     <Flex
       style={{
