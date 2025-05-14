@@ -1,8 +1,13 @@
 import WebApp from "@twa-dev/sdk";
 import { Button, Flex, Typography } from "antd";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const App = () => {
+  const [viewportHeight, setViewportHeight] =useState(0);
+
+  useEffect(()=>{
+    setViewportHeight(WebApp?.viewportStableHeight)
+  },[])
   useEffect(() => {
     WebApp.ready();
     if (Number(WebApp?.version) >= 8 && WebApp?.platform !== "tdesktop") {
@@ -11,11 +16,16 @@ const App = () => {
     }
   }, []);
 
+
+  useEffect(()=>{
+
+  }, [])
+
   console.log(WebApp?.safeAreaInset?.top);
   console.log(WebApp?.contentSafeAreaInset?.top);
   console.log(WebApp?.viewportStableHeight);
 
-  const heightChanged = WebApp?.viewportStableHeight < 521
+  const heightChanged =  WebApp?.viewportStableHeight < viewportHeight
 
   return (
     <Flex
