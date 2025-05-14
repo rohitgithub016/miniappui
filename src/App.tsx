@@ -1,35 +1,33 @@
-import WebApp from "@twa-dev/sdk";
-import { Button, Flex, Typography } from "antd";
 import { useEffect, useState } from "react";
+import { Button, Flex, Typography } from "antd";
 
 const App = () => {
-  const [initialHeight, setInitialHeight] = useState(WebApp.viewportHeight);
-  const [currentHeight, setCurrentHeight] = useState(WebApp.viewportHeight);
+  const [isKeyboardOpen, setIsKeyboardOpen] = useState(false);
+  const [initialHeight, setInitialHeight] = useState<number | null>(null);
 
   useEffect(() => {
-    WebApp.ready();
+    const handleResize = () => {
+      const currentHeight = window.visualViewport?.height ?? window.innerHeight;
 
-    if (Number(WebApp?.version) >= 8 && WebApp?.platform !== "tdesktop") {
-      WebApp.expand();
-      WebApp.requestFullscreen();
-    }
+      if (initialHeight === null) {
+        setInitialHeight(currentHeight);
+        return;
+      }
 
-    setInitialHeight(WebApp.viewportHeight);
-
-    const handleViewportChange = () => {
-      const newHeight = WebApp.viewportHeight;
-      setCurrentHeight(newHeight);
+      // If the height shrinks significantly, assume keyboard is open
+      setIsKeyboardOpen(currentHeight < (initialHeight - 100));
     };
 
-    WebApp.onEvent("viewportChanged", handleViewportChange);
+    // Listen to visualViewport changes
+    window.visualViewport?.addEventListener("resize", handleResize);
+
+    // Initialize once on mount
+    handleResize();
 
     return () => {
-      WebApp.offEvent("viewportChanged", handleViewportChange);
+      window.visualViewport?.removeEventListener("resize", handleResize);
     };
-  }, []);
-
-  // If current height is significantly smaller than initial, assume keyboard is open
-  const isKeyboardOpen = currentHeight < initialHeight - 100;
+  }, [initialHeight]);
 
   return (
     <Flex
@@ -38,19 +36,13 @@ const App = () => {
         height: "100vh",
         overflow: "auto",
         padding: "20px",
-        backgroundColor: "lightyellow",
+        background: "#fff8dc",
       }}
     >
-      <input type="text" />
-      <Typography.Title level={2}>Hello, Telegram Web App!</Typography.Title>
-      <input type="text" />
-      <Typography.Text>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      </Typography.Text>
-      <input type="text" />
-      <Typography.Text>
-        Additional text for scrolling and space.
-      </Typography.Text>
+      <Typography.Title level={2}>Telegram Mini App Test</Typography.Title>
+      <input type="text" placeholder="Type something..." />
+      <div style={{ height: 400 }} />
+      <input type="text" placeholder="Another input..." />
 
       {!isKeyboardOpen && (
         <Flex
@@ -59,10 +51,12 @@ const App = () => {
             bottom: 20,
             left: 20,
             right: 20,
-            zIndex: 10,
+            zIndex: 100,
           }}
         >
-          <Button block type="primary">Click Me</Button>
+          <Button block type="primary">
+            Fixed Bottom Button
+          </Button>
         </Flex>
       )}
     </Flex>
