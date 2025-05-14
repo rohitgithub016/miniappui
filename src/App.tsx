@@ -15,7 +15,7 @@ const App = () => {
       }
 
       // If the height shrinks significantly, assume keyboard is open
-      setIsKeyboardOpen(currentHeight < (initialHeight - 100));
+      setIsKeyboardOpen(currentHeight < initialHeight - 100);
     };
 
     // Listen to visualViewport changes
@@ -44,7 +44,7 @@ const App = () => {
       <div style={{ height: 400 }} />
       <input type="text" placeholder="Another input..." />
 
-      {!isKeyboardOpen && (
+      {
         <Flex
           style={{
             position: "fixed",
@@ -58,7 +58,7 @@ const App = () => {
             Fixed Bottom Button
           </Button>
         </Flex>
-      )}
+      }
     </Flex>
   );
 };
