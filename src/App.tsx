@@ -15,7 +15,7 @@ const App = () => {
   console.log(WebApp?.contentSafeAreaInset?.top);
   console.log(WebApp?.viewportStableHeight);
 
-  const heightChanged = WebApp?.viewportStableHeight < 800
+  const heightChanged = WebApp?.viewportStableHeight < 700
 
   return (
     <Flex
