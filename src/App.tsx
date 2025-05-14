@@ -5,6 +5,8 @@ const App = () => {
   const [isKeyboardOpen, setIsKeyboardOpen] = useState(false);
   const [initialHeight, setInitialHeight] = useState<number | null>(null);
 
+  console.log(isKeyboardOpen)
+
   useEffect(() => {
     const handleResize = () => {
       const currentHeight = window.visualViewport?.height ?? window.innerHeight;
