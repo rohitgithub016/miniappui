@@ -17,22 +17,12 @@ const App = () => {
   }, []);
 
 
-  useEffect(()=>{
-
-  }, [])
-
-  console.log(WebApp?.safeAreaInset?.top);
-  console.log(WebApp?.contentSafeAreaInset?.top);
-  console.log(WebApp?.viewportStableHeight);
-
   const heightChanged =  WebApp?.viewportStableHeight < viewportHeight
-
-  console.log(heightChanged);
 
   const handleChange = () => {
     console.log(viewportHeight);
     console.log(WebApp?.viewportStableHeight);
-    console.log(viewportHeight);
+    console.log(heightChanged);
   }
 
   return (
