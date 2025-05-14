@@ -3,60 +3,66 @@ import { Button, Flex, Typography } from "antd";
 import { useEffect, useState } from "react";
 
 const App = () => {
-  const [isKeyboardOpen, setIsKeyboardOpen] = useState(false);
-  const [initialHeight, setInitialHeight] = useState(WebApp.viewportStableHeight);
+  const [initialHeight, setInitialHeight] = useState(WebApp.viewportHeight);
+  const [currentHeight, setCurrentHeight] = useState(WebApp.viewportHeight);
 
   useEffect(() => {
     WebApp.ready();
+
     if (Number(WebApp?.version) >= 8 && WebApp?.platform !== "tdesktop") {
       WebApp.expand();
       WebApp.requestFullscreen();
     }
 
-    // Save the initial stable height
-    setInitialHeight(WebApp.viewportStableHeight);
+    setInitialHeight(WebApp.viewportHeight);
 
-    // Listen for viewport changes
-    WebApp.onEvent("viewportChanged", () => {
-      const stableHeight = WebApp.viewportStableHeight;
+    const handleViewportChange = () => {
+      const newHeight = WebApp.viewportHeight;
+      setCurrentHeight(newHeight);
+    };
 
-      // If height decreased significantly, keyboard likely opened
-      const keyboardOpened = stableHeight < initialHeight - 100;
+    WebApp.onEvent("viewportChanged", handleViewportChange);
 
-      setIsKeyboardOpen(keyboardOpened);
-    });
+    return () => {
+      WebApp.offEvent("viewportChanged", handleViewportChange);
+    };
   }, []);
+
+  // If current height is significantly smaller than initial, assume keyboard is open
+  const isKeyboardOpen = currentHeight < initialHeight - 100;
 
   return (
     <Flex
-      style={{
-        padding: "20px",
-        background: "yellow",
-        overflow: "auto",
-        height: "100vh",
-      }}
       vertical
+      style={{
+        height: "100vh",
+        overflow: "auto",
+        padding: "20px",
+        backgroundColor: "lightyellow",
+      }}
     >
       <input type="text" />
       <Typography.Title level={2}>Hello, Telegram Web App!</Typography.Title>
       <input type="text" />
-      <Typography.Title level={1}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum cupiditate
-      </Typography.Title>
+      <Typography.Text>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </Typography.Text>
       <input type="text" />
-      <Typography.Title level={1}>
-        More content here to allow scrolling and test keyboard push
-      </Typography.Title>
+      <Typography.Text>
+        Additional text for scrolling and space.
+      </Typography.Text>
 
       {!isKeyboardOpen && (
         <Flex
           style={{
-            bottom: 20,
             position: "fixed",
-            width: "calc(100% - 40px)",
+            bottom: 20,
+            left: 20,
+            right: 20,
+            zIndex: 10,
           }}
         >
-          <Button style={{ width: "100%" }}>Click me</Button>
+          <Button block type="primary">Click Me</Button>
         </Flex>
       )}
     </Flex>
