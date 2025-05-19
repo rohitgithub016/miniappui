@@ -28,16 +28,16 @@ const App = () => {
   }, [initialHeight]);
 
   return (
-      <video
-        id="splash-screen-video"
-        src="./bg.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="auto"
-        controls={false}
-      ></video>
+    <video
+      id="splash-screen-video"
+      src="./bg.mp4"
+      autoPlay
+      loop
+      muted
+      playsInline
+      preload="auto"
+      controls={false}
+    ></video>
   );
 };
 
