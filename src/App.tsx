@@ -31,8 +31,10 @@ const App = () => {
     <video
       id="splash-screen-video"
       src="./bg.mp4"
+      autoPlay
       loop
       muted
+      playsInline
       webkit-playsinline
       preload="auto"
     ></video>
