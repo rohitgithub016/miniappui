@@ -1,12 +1,9 @@
-import WebApp from "@twa-dev/sdk";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const App = () => {
   const [viewportHeight, setViewportHeight] = useState<number | null>(null);
   const [initialHeight, setInitialHeight] = useState<number | null>(null);
-  const [firstTime, setFirstTime] = useState(false)
-  const inputRef = useRef()
   console.log(viewportHeight);
 
   useEffect(() => {
@@ -36,7 +33,6 @@ const App = () => {
         <input
           inputMode="numeric"
           type="tel"
-          ref={inputRef}
           defaultValue="Type here..."
           style={{ textAlign: 'end' }}
           // onClick={firstTime ? moveCursorToEnd : () => undefined}
