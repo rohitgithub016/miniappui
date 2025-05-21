@@ -40,7 +40,7 @@ const Layout = () => {
         width: "100vw",
         height: "100vh",
         paddingTop: getPaddingTop(),
-        backgroundColor: "red",
+        // backgroundColor: "red",
       }}
     >
       <Outlet />
