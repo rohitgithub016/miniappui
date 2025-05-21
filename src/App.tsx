@@ -1,5 +1,6 @@
 import WebApp from "@twa-dev/sdk";
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 const MoveCursorToEnd = () => {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -25,7 +26,7 @@ const MoveCursorToEnd = () => {
   console.log(WebApp?.viewportHeight)
 
   return (
-    <div className="flex flex-col items-center gap-4 p-4">
+    <div className="flex flex-col items-center gap-4 p-4 h-screen">
       <input
         inputMode="numeric"
         type="tel"
@@ -38,6 +39,16 @@ const MoveCursorToEnd = () => {
           setTime(true)
         }}
       />
+      <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '8px'
+      }}>
+      <Link to={'/home'}>Home</Link>
+      <Link to={'/about-us'}>About Us</Link>
+
+      </div>
+
     </div>
   );
 };
