@@ -21,8 +21,28 @@ const Layout = () => {
       });
     }
   }, [location?.pathname]);
+
+  const getPaddingTop = () => {
+    if(WebApp?.platform === "tdesktop") {
+      return '0px';
+    } else if (WebApp?.platform === "android") {
+      return '90px';
+    } else if (WebApp?.platform === "ios") { 
+      return '110px';
+    } else if (WebApp?.platform === "unknown") {
+      return '0px';
+    }
+  }
+
   return (
-    <div>
+    <div
+      style={{
+        width: "100vw",
+        height: "100vh",
+        paddingTop: getPaddingTop(),
+        backgroundColor: "red",
+      }}
+    >
       <Outlet />
     </div>
   );

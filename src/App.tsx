@@ -1,31 +1,40 @@
+<<<<<<< HEAD
 import WebApp from "@twa-dev/sdk";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+=======
+import { useEffect, useState } from "react";
+>>>>>>> 811a6581231f8ef2e59b9e1e9f750b9bc1d60967
 
-const MoveCursorToEnd = () => {
-  const inputRef = useRef<HTMLInputElement>(null);
-  const [firstTime, setTime] = useState(true);
+const App = () => {
+  const [viewportHeight, setViewportHeight] = useState<number | null>(null);
+  const [initialHeight, setInitialHeight] = useState<number | null>(null);
 
-  const moveCursorToEnd = () => {
-    console.log("asdfasdf")
-    if (inputRef.current) {
-      const length = inputRef.current.value.length;
-      inputRef.current.focus();
-      inputRef.current.setSelectionRange(length, length);
-    }
-  };
+  console.log(viewportHeight);
+
   useEffect(() => {
-    console.log((window as any)?.webkit, 'webkit object', ((window as any)?.webkit as any)?.messageHandlers);
-    if ((window as any)?.webkit && ((window as any)?.webkit as any)?.messageHandlers) {
-      console.log(((window as any)?.webkit.messageHandlers as any)?.iOS);
-    }
-  }, []);
+    const handleResize = () => {
+      const height = window.visualViewport?.height || window.innerHeight;
 
-  console.log(firstTime)
+      if (!initialHeight) {
+        setInitialHeight(height);
+        setViewportHeight(height);
+        return;
+      }
 
-  console.log(WebApp?.viewportHeight)
+      setViewportHeight(height);
+    };
+
+    window.visualViewport?.addEventListener("resize", handleResize);
+    handleResize(); // initial call
+
+    return () => {
+      window.visualViewport?.removeEventListener("resize", handleResize);
+    };
+  }, [initialHeight]);
 
   return (
+<<<<<<< HEAD
     <div className="flex flex-col items-center gap-4 p-4 h-screen">
       <input
         inputMode="numeric"
@@ -50,7 +59,29 @@ const MoveCursorToEnd = () => {
       </div>
 
     </div>
+=======
+    <video
+      id="splash-screen-video"
+      src="./bg.mp4"
+      autoPlay
+      loop
+      muted
+      playsInline
+      webkit-playsinline
+      preload="auto"
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        objectFit: "cover",
+        zIndex: -1,
+        pointerEvents: "none",
+      }}
+    ></video>
+>>>>>>> 811a6581231f8ef2e59b9e1e9f750b9bc1d60967
   );
 };
 
-export default MoveCursorToEnd;
+export default App;
