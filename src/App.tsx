@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import TabCarousel from "./Components/CaroselAnimation";
 
 const App = () => {
   const [viewportHeight, setViewportHeight] = useState<number | null>(null);
@@ -30,6 +31,7 @@ const App = () => {
   return (
     <>
       <div className="flex flex-col items-center gap-4 p-4 h-screen">
+        <TabCarousel />
         <input
           inputMode="numeric"
           type="tel"
