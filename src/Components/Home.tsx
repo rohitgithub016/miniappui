@@ -43,7 +43,7 @@ const Home = () => {
   }, [])
 
   return (
-    <AnimatedPage>
+    <AnimatedPage type="fade">
       <div id="home" ref={elementRef} style={{
         height: '100vh',
         backgroundColor: 'red',

@@ -3,7 +3,7 @@ import AnimatedPage from "./AnimatePage"
 
 const AboutUs = () => {
   return (
-    <AnimatedPage>
+    <AnimatedPage type="fade">
       <div>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, officia
         quidem! Eius nam qui aperiam repellat quos doloribus laboriosam quibusdam
