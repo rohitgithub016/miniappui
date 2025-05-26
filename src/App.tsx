@@ -66,7 +66,7 @@ function App() {
       ref={containerRef}
       style={{
         height: "100vh",
-        overflowY: "scroll",
+        overflowY: "hidden",
         padding: "20px",
         boxSizing: "border-box",
         background: "#f9f9f9",
