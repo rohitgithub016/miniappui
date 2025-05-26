@@ -9,6 +9,11 @@ body,
   overflow: hidden;
 }
 
+body {
+   padding-top: 54px !important;
+  padding-bottom: 30px !important;
+}
+
 video::-webkit-media-controls-start-playback-button {
   display: none !important;
   -webkit-appearance: none;
