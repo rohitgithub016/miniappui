@@ -3,9 +3,9 @@ import { Button, Flex, Typography } from "antd";
 import { useEffect } from "react";
 
 const App = () => {
-  console.log("#############################################")
-  console.log(WebApp.viewportStableHeight)
-  console.log("#############################################")
+  console.log("#############################################");
+  console.log(WebApp.viewportStableHeight);
+  console.log("#############################################");
 
   useEffect(() => {
     // This is a placeholder for any side effects or initializations
@@ -55,6 +55,13 @@ const App = () => {
       input.scrollTo({ behavior: "smooth", top: 0 });
     }
   };
+
+  const handleOnClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <Flex
       vertical
@@ -77,6 +84,7 @@ const App = () => {
           handleIn;
         }}
         id="123"
+        onClick={handleOnClick}
       />
       <input
         type="text"
@@ -85,6 +93,7 @@ const App = () => {
           handleIn;
         }}
         id="123"
+        onClick={handleOnClick}
       />
       <input
         type="text"
@@ -93,6 +102,7 @@ const App = () => {
           handleIn;
         }}
         id="123"
+        onClick={handleOnClick}
       />
       <input
         type="text"
@@ -101,6 +111,7 @@ const App = () => {
           handleIn;
         }}
         id="123"
+        onClick={handleOnClick}
       />{" "}
       <input
         type="text"
@@ -109,6 +120,7 @@ const App = () => {
           handleIn;
         }}
         id="123"
+        onClick={handleOnClick}
       />
       <input
         type="text"
@@ -116,6 +128,7 @@ const App = () => {
         onFocus={() => {
           handleIn;
         }}
+        onClick={handleOnClick}
         id="123"
       />
       <Typography.Title level={1}>
