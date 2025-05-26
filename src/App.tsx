@@ -3,6 +3,10 @@ import { Button, Flex, Typography } from "antd";
 import { useEffect } from "react";
 
 const App = () => {
+  console.log("#############################################")
+  console.log(WebApp.viewportStableHeight)
+  console.log("#############################################")
+
   useEffect(() => {
     // This is a placeholder for any side effects or initializations
     if (Number(WebApp.version) >= 8) {

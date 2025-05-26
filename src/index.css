@@ -1,42 +1,4 @@
-@import url('./App.css');
-html,
-body,
-#root {
+html, body {
   height: 100%;
-  margin: 0;
-  padding: 0;
-  background-color: #fff8dc;
   overflow: hidden;
-}
-
-body {
-   padding-top: 94px !important;
-  padding-bottom: 30px !important;
-}
-
-video::-webkit-media-controls-start-playback-button {
-  display: none !important;
-  -webkit-appearance: none;
-}
-
-video {
-  pointer-events: none;
-  object-fit: cover;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  user-select: none;
-}
-
-#splash-screen-video {
-  position: fixed; /* or absolute */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1; /* ensure it's behind UI */
-  pointer-events: none; /* disable interaction */
 }
