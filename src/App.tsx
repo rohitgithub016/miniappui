@@ -27,7 +27,7 @@ const App = () => {
   return (
     <Flex
       vertical
-      style={{ padding: "10px", height: "100vh", overflowY: "auto" }}
+      style={{ padding: "10px", height: "100dvh", overflowY: "auto" }}
     >
       <Typography.Title level={1}>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae in ut
