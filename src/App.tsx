@@ -1,3 +1,4 @@
+import { Flex } from "antd";
 import { useEffect } from "react";
 
 export default function App() {
@@ -32,7 +33,8 @@ export default function App() {
           flex: 1,
         }}
       >
-        {Array.from({ length: 10 }).map((_, i) => (
+        <Flex vertical gap={40}>
+                  {Array.from({ length: 10 }).map((_, i) => (
           <input
             key={i}
             type="text"
@@ -41,6 +43,7 @@ export default function App() {
             style={{ display: "block" }}
           />
         ))}
+        </Flex>
       </div>
     </div>
   );
