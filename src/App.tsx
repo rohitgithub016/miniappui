@@ -1,4 +1,6 @@
-import { useRef } from "react";
+import WebApp from "@twa-dev/sdk";
+import { Flex } from "antd";
+import { useEffect, useRef } from "react";
 
 function App() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -11,8 +13,17 @@ function App() {
   };
 
   const handleClick = () => {
-    console.log("Input clicked");
+    scrollToTop();
   };
+
+  useEffect(() => {
+    if (Number(WebApp?.version) > 8) {
+      WebApp?.ready();
+      WebApp?.expand();
+      WebApp?.requestFullscreen();
+      WebApp?.disableVerticalSwipes();
+    }
+  }, []);
 
   return (
     <div
@@ -29,16 +40,17 @@ function App() {
       {[...Array(30)].map((_, i) => (
         <p key={i}>This is paragraph #{i + 1}</p>
       ))}
-      <input onClick={handleClick}/>
-      <input onClick={handleClick}/>
-      <input onClick={handleClick}/>
-      <input onClick={handleClick}/>
-      <input onClick={handleClick}/>
-      <input onClick={handleClick}/>
-      <input onClick={handleClick}/>
-      <input onClick={handleClick}/>
-      <input onClick={handleClick}/>
-
+      <Flex vertical>
+        <input onClick={handleClick} />
+        <input onClick={handleClick} />
+        <input onClick={handleClick} />
+        <input onClick={handleClick} />
+        <input onClick={handleClick} />
+        <input onClick={handleClick} />
+        <input onClick={handleClick} />
+        <input onClick={handleClick} />
+        <input onClick={handleClick} />
+      </Flex>
 
       <div style={{ position: "fixed", bottom: 20, right: 20 }}>
         <button onClick={scrollToTop} style={{ padding: "10px 20px" }}>
