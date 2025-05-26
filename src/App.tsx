@@ -14,8 +14,21 @@ const App = () => {
     }
   }, []);
 
+  useEffect(() => {
+    const input = document.querySelector("input");
+    if (input) {
+      input.addEventListener("focus", () => {
+        setTimeout(() => {
+          input.scrollIntoView({ behavior: "smooth", block: "center" });
+        }, 300); // delay to wait for keyboard
+      });
+    }
+  }, []);
   return (
-    <Flex vertical style={{padding: '10px', height: '100vh', overflowY: 'auto'}}>
+    <Flex
+      vertical
+      style={{ padding: "10px", height: "100vh", overflowY: "auto" }}
+    >
       <Typography.Title level={1}>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae in ut
         quis ducimus perferendis cum reprehenderit odio vel, aspernatur
@@ -29,9 +42,7 @@ const App = () => {
         deleniti! Cum quas odit repellendus delectus laborum omnis dolorem ad a.
       </Typography.Title>
       <input type="text" placeholder="Type something..." />
-      <Typography.Title level={1}>
-        Lorem ipsum dolor adipi
-      </Typography.Title>
+      <Typography.Title level={1}>Lorem ipsum dolor adipi</Typography.Title>
       <div
         style={{ bottom: 30, position: "fixed", width: "100%", padding: 10 }}
       >
