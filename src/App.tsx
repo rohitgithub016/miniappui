@@ -61,8 +61,6 @@ const App = () => {
         quis ducimus perferendis cum reprehenderit odio vel, aspernatur
         deleniti! Cum quas odit repellendus delectus laborum omnis dolorem ad a.
       </Typography.Title>
-
-
       <Typography.Title level={1}>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae in ut
         quis ducimus perferendis cum reprehenderit odio vel, aspernatur
@@ -76,7 +74,49 @@ const App = () => {
         }}
         id="123"
       />
-      <Typography.Title level={1}>Lorem Lorem ipsum dolor sit amet consectetur </Typography.Title>
+      <input
+        type="text"
+        placeholder="Type something..."
+        onFocus={() => {
+          handleIn;
+        }}
+        id="123"
+      />
+      <input
+        type="text"
+        placeholder="Type something..."
+        onFocus={() => {
+          handleIn;
+        }}
+        id="123"
+      />
+      <input
+        type="text"
+        placeholder="Type something..."
+        onFocus={() => {
+          handleIn;
+        }}
+        id="123"
+      />{" "}
+      <input
+        type="text"
+        placeholder="Type something..."
+        onFocus={() => {
+          handleIn;
+        }}
+        id="123"
+      />
+      <input
+        type="text"
+        placeholder="Type something..."
+        onFocus={() => {
+          handleIn;
+        }}
+        id="123"
+      />
+      <Typography.Title level={1}>
+        Lorem Lorem ipsum dolor sit amet consectetur{" "}
+      </Typography.Title>
       <div
         style={{ bottom: 30, position: "fixed", width: "100%", padding: 10 }}
         id="button-container"
