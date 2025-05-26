@@ -48,7 +48,7 @@ const App = () => {
   const handleIn = () => {
     const input = document.getElementById("123");
     if (input) {
-      input.scrollIntoView({ behavior: "smooth", block: "center" });
+      input.scrollTo({ behavior: "smooth", top: 0 });
     }
   };
   return (
