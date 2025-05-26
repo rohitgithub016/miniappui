@@ -18,11 +18,32 @@ const App = () => {
     const input = document.querySelector("input");
     if (input) {
       input.addEventListener("focus", () => {
+        console.log("hello")
         setTimeout(() => {
           input.scrollIntoView({ behavior: "smooth", block: "center" });
         }, 300); // delay to wait for keyboard
       });
     }
+  }, []);
+
+  useEffect(() => {
+    const buttonContainer = document.getElementById("button-container");
+    const input = document.querySelector("input");
+
+    if(input){
+      input.addEventListener("focus", () => {
+        if (buttonContainer) {
+          buttonContainer.style.visibility = "hidden";
+        }
+      });
+
+      input.addEventListener("blur", () => {
+        if (buttonContainer) {
+          buttonContainer.style.visibility = "none";
+        }
+      });
+    }
+
   }, []);
   return (
     <Flex
@@ -45,6 +66,7 @@ const App = () => {
       <Typography.Title level={1}>Lorem ipsum dolor adipi</Typography.Title>
       <div
         style={{ bottom: 30, position: "fixed", width: "100%", padding: 10 }}
+        id="button-container"
       >
         <Button type="primary" style={{ width: "calc(100vw - 20px)" }}>
           CLICK ME
