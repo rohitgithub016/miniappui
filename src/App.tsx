@@ -73,9 +73,6 @@ function App() {
       }}
     >
       <h1>Scroll Down</h1>
-      {[...Array(30)].map((_, i) => (
-        <p key={i}>This is paragraph #{i + 1}</p>
-      ))}
 
       <Flex vertical>
         {[...Array(9)].map((_, i) => (
