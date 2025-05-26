@@ -56,7 +56,7 @@ function App() {
     if (Number(WebApp?.version) > 8) {
       WebApp?.ready();
       WebApp?.expand();
-      WebApp?.requestFullscreen();
+      // WebApp?.requestFullscreen();
       WebApp?.disableVerticalSwipes();
     }
   }, []);
@@ -70,6 +70,7 @@ function App() {
         padding: "20px",
         boxSizing: "border-box",
         background: "#f9f9f9",
+        marginTop: "100px"
       }}
     >
       <h1>Scroll Down</h1>
