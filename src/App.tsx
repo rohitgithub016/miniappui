@@ -18,7 +18,7 @@ const App = () => {
     const input = document.querySelector("input");
     if (input) {
       input.addEventListener("focus", () => {
-        console.log("hello")
+        console.log("hello");
         setTimeout(() => {
           input.scrollIntoView({ behavior: "smooth", block: "center" });
         }, 300); // delay to wait for keyboard
@@ -30,7 +30,7 @@ const App = () => {
     const buttonContainer = document.getElementById("button-container");
     const input = document.querySelector("input");
 
-    if(input){
+    if (input) {
       input.addEventListener("focus", () => {
         if (buttonContainer) {
           buttonContainer.style.visibility = "hidden";
@@ -43,8 +43,14 @@ const App = () => {
         }
       });
     }
-
   }, []);
+
+  const handleIn = () => {
+    const input = document.getElementById("123");
+    if (input) {
+      input.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  };
   return (
     <Flex
       vertical
@@ -55,14 +61,21 @@ const App = () => {
         quis ducimus perferendis cum reprehenderit odio vel, aspernatur
         deleniti! Cum quas odit repellendus delectus laborum omnis dolorem ad a.
       </Typography.Title>
-      <input type="text" placeholder="Type something..." />
+
 
       <Typography.Title level={1}>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae in ut
         quis ducimus perferendis cum reprehenderit odio vel, aspernatur
         deleniti! Cum quas odit repellendus delectus laborum omnis dolorem ad a.
       </Typography.Title>
-      <input type="text" placeholder="Type something..." />
+      <input
+        type="text"
+        placeholder="Type something..."
+        onFocus={() => {
+          handleIn;
+        }}
+        id="123"
+      />
       <Typography.Title level={1}>Lorem ipsum dolor adipi</Typography.Title>
       <div
         style={{ bottom: 30, position: "fixed", width: "100%", padding: 10 }}
