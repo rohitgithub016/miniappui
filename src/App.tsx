@@ -1,50 +1,93 @@
-import { Flex } from "antd";
-import { useEffect } from "react";
+import  { useRef, useEffect, useCallback, useState } from "react";
+import "./App.css";
 
-export default function App() {
+function App() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const topOffsetRef = useRef<number | null>(null);
+  const [focusedIndex, setFocusedIndex] = useState<number | null>(null);
+
+  console.log(focusedIndex)
+
   useEffect(() => {
-    const updateViewportHeight = () => {
-      const vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty("--vh", `${vh}px`);
-    };
+    const firstElement = document.querySelector(".translate-wrapper");
+    if (firstElement) {
+      topOffsetRef.current = firstElement.getBoundingClientRect().top;
+    }
+  }, []);
 
-    updateViewportHeight();
-    window.addEventListener("resize", updateViewportHeight);
+  const handleFocus = useCallback((index: number) => {
+    setFocusedIndex(index);
 
-    return () => {
-      window.removeEventListener("resize", updateViewportHeight);
-    };
+    const allWrappers = document.querySelectorAll(".translate-wrapper");
+    const selectedEl = allWrappers[index] as HTMLElement;
+    const firstEl = allWrappers[0] as HTMLElement;
+
+    const containerScrollY = containerRef.current?.scrollTop ?? 0;
+    const translateYVal =
+      selectedEl.getBoundingClientRect().top +
+      containerScrollY -
+      (topOffsetRef.current ?? 0);
+
+    if (index !== 0) {
+      firstEl.style.transform = `translateY(${translateYVal}px)`;
+      selectedEl.style.transform = `translateY(-${translateYVal}px)`;
+    }
+
+    // Focus and set cursor to end
+    const input = selectedEl.querySelector("input") as HTMLInputElement;
+    setTimeout(() => {
+      if (input) {
+        input.focus();
+        const len = input.value.length;
+        input.setSelectionRange(len, len);
+      }
+    }, 0);
+  }, []);
+
+  const handleBlur = useCallback(() => {
+    setFocusedIndex(null);
+    const allWrappers = document.querySelectorAll(".translate-wrapper");
+    allWrappers.forEach((el) => {
+      (el as HTMLElement).style.transform = "unset";
+    });
   }, []);
 
   return (
     <div
+      ref={containerRef}
       style={{
-        height: "calc(var(--vh, 1vh) * 100)",
-        overflow: "hidden",
-        display: "flex",
-        flexDirection: "column",
+        height: "100vh",
+        overflowY: "auto",
+        padding: "16px",
+        backgroundColor: "#f5f5f5",
       }}
     >
-      {/* Scrollable Inner Container */}
-      <div
-        style={{
-          overflowY: "auto",
-          padding: "16px",
-          flex: 1,
-        }}
-      >
-        <Flex vertical gap={40}>
-                  {Array.from({ length: 10 }).map((_, i) => (
+      <h2 style={{ marginBottom: 24 }}>Focus any input</h2>
+
+      {Array.from({ length: 8 }).map((_, index) => (
+        <div
+          key={index}
+          className="translate-wrapper"
+          style={{
+            transition: "transform 0.3s ease",
+            background: "#fff",
+            borderRadius: 8,
+            padding: 12,
+            marginBottom: 16,
+            boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
+          }}
+        >
           <input
-            key={i}
             type="text"
-            placeholder={`Input ${i + 1}`}
-            className="bg-red-300 p-2 mb-2 w-full"
-            style={{ display: "block" }}
+            placeholder={`Input ${index + 1}`}
+            style={{ width: "100%", padding: 8 }}
+            onFocus={() => handleFocus(index)}
+            onBlur={handleBlur}
           />
-        ))}
-        </Flex>
-      </div>
+        </div>
+      ))}
     </div>
   );
 }
+
+export default App;
