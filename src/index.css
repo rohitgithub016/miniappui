@@ -1,0 +1,23 @@
+body {
+    margin: 0px;
+}
+
+.page-container {
+    height: 100vh;
+}
+
+.padding-10 {
+    padding: 10px;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.page-header {
+    background: #b38cb4;
+}
+
+.page-body {
+    background: linear-gradient(to right, #d9afd9, #97d9e1);
+}
