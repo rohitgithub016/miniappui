@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 
-const AnimatePage = () => {
+const AnimatePage = ({ children }: { children: React.ReactNode }) => {
   return (
     <motion.div
       className="box"
@@ -13,7 +13,7 @@ const AnimatePage = () => {
         damping: 25,
       }}
     >
-      <div>AnimatePage</div>
+      {children}
     </motion.div>
   );
 };
