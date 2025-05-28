@@ -1,7 +1,9 @@
 import WebApp from "@twa-dev/sdk";
 import eruda from "eruda";
+import { useNavigate } from "react-router-dom";
 
 const useInitiateTelegram = () => {
+  const navigate = useNavigate();
   eruda.init();
   console.log(WebApp?.contentSafeAreaInset);
   console.log(WebApp?.safeAreaInset);
@@ -12,7 +14,7 @@ const useInitiateTelegram = () => {
   }
   WebApp.BackButton.show();
   WebApp.BackButton.onClick(() => {
-    history.back();
+    navigate(-1);
   });
 };
 
