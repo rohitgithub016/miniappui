@@ -11,6 +11,7 @@ const navOptions = [
 const Layout = () => {
   const navigate = useNavigate();
   useInitiateTelegram();
+  
   return (
     <Flex vertical className="page-container">
       <Flex
