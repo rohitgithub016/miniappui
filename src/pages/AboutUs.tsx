@@ -10,7 +10,9 @@ const About = () => {
         align="center"
         className="flex-1 page-body"
       >
-        <Typography.Title level={2}>ABOUT US</Typography.Title>
+        <Flex vertical className="flex-1">
+          <Typography.Title level={2}>ABOUT US</Typography.Title>
+        </Flex>
       </Flex>
     </AnimatePage>
   );
