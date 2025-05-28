@@ -21,4 +21,5 @@ body {
 
 .page-body {
     background: linear-gradient(to right, #d9afd9, #97d9e1);
+    height: 100vh;
 }
