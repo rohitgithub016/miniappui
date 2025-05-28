@@ -14,6 +14,7 @@ const useInitiateTelegram = () => {
   }
   WebApp.BackButton.show();
   WebApp.BackButton.onClick(() => {
+    console.log("inside");
     navigate(-1);
   });
 };
