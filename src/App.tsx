@@ -21,8 +21,31 @@ const App = () => {
     }
   };
   const handleClickIOS = () => {
-    WebApp?.openTelegramLink("https://t.me/${bot}?startgroup=true");
-  }
+    WebApp?.openTelegramLink(`https://t.me/${bot}?startgroup=true`);
+  };
+  const handleClickOpenLink = () => {
+    WebApp?.openTelegramLink(`https://t.me/${bot}?startgroup=true`);
+  };
+  const handleClickOpenLink1 = () => {
+    WebApp?.openLink(`https://t.me/${bot}?startgroup=true`);
+  };
+  const handleClickOpenKunal = () => {
+    WebApp?.openLink(
+      `https://t.me/${bot}?startgroup=true&admin=change_info,delete_messages,ban_users,invite_users,pin_messages,manage_video_chats`
+    );
+  };
+  const handleOpenAndroid = () => {
+    window?.open(
+      `https://t.me/${bot}?startgroup=true&admin=manage_chat,invite_users,change_info,post_messages,edit_messages,delete_messages,pin_messages,restrict_members`,
+      "_self"
+    );
+  };
+  const handleOpenAndroidKunal = () => {
+    window?.open(
+      `https://t.me/${bot}?startgroup=true&admin=change_info,delete_messages,ban_users,invite_users,pin_messages,manage_video_chats`,
+      "_self"
+    );
+  };
   return (
     <Layout>
       <AnimatePage>
@@ -50,6 +73,21 @@ const App = () => {
           </Button>
           <Button type="primary" onClick={handleClickIOS}>
             ADD GROUP IOS
+          </Button>
+          <Button type="primary" onClick={handleClickOpenLink}>
+            Open Link
+          </Button>
+          <Button type="primary" onClick={handleClickOpenLink1}>
+            Open Link 1
+          </Button>
+          <Button type="primary" onClick={handleClickOpenKunal}>
+            kunal
+          </Button>
+          <Button type="primary" onClick={handleOpenAndroid}>
+            android
+          </Button>
+          <Button type="primary" onClick={handleOpenAndroidKunal}>
+            kunal android
           </Button>
         </Flex>
       </AnimatePage>
