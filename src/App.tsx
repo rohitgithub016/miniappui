@@ -1,6 +1,7 @@
-import { Flex, Layout, Typography } from "antd";
+import { Button, Flex, Layout, Typography } from "antd";
 import AnimatePage from "./Component/AnimatePage";
 import { useNavigate } from "react-router-dom";
+import WebApp from "@twa-dev/sdk";
 const navOptions = [
   { label: "HOME", value: "/" },
   { label: "ABOUT US", value: "/about" },
@@ -9,6 +10,16 @@ const navOptions = [
 
 const App = () => {
   const navigate = useNavigate();
+  const bot = "hubz_dev_v2_bot";
+  const handleClick = () => {
+    if (WebApp?.platform === "ios") {
+      WebApp.openTelegramLink(`https://t.me/${bot}?startgroup=true`);
+    } else {
+      WebApp.openTelegramLink(
+        `https://t.me/${bot}?startgroup=true&admin=manage_chat,invite_users,change_info,post_messages,edit_messages,delete_messages,pin_messages,restrict_members`
+      );
+    }
+  };
   return (
     <Layout>
       <AnimatePage>
@@ -18,19 +29,22 @@ const App = () => {
           align="center"
           className="flex-1 page-body"
         >
-                <Flex
-                  gap={10}
-                  className="padding-10 page-header"
-                  justify="center"
-                  align="center"
-                >
-                  {navOptions?.map((option) => (
-                    <Typography.Text onClick={() => navigate(option?.value)}>
-                      {option.label}
-                    </Typography.Text>
-                  ))}
-                </Flex>
+          <Flex
+            gap={10}
+            className="padding-10 page-header"
+            justify="center"
+            align="center"
+          >
+            {navOptions?.map((option) => (
+              <Typography.Text onClick={() => navigate(option?.value)}>
+                {option.label}
+              </Typography.Text>
+            ))}
+          </Flex>
           <Typography.Title level={2}>HOME PAGE</Typography.Title>
+          <Button type="primary" onClick={handleClick}>
+            ADD GROUP
+          </Button>
         </Flex>
       </AnimatePage>
     </Layout>
