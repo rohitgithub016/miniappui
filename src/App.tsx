@@ -53,6 +53,16 @@ const App = () => {
     window?.open(`https://t.me/${bot}?startgroup=true`, "_self");
   };
 
+  const latest = () => {
+    window?.open(`https://t.me/${bot}?startgroup=true&admin`);
+  };
+  const latest1 = () => {
+    WebApp?.openTelegramLink(`https://t.me/${bot}?startgroup=true&admin`);
+  };
+  const latest2 = () => {
+    WebApp?.openLink(`https://t.me/${bot}?startgroup=true&admin`);
+  };
+
   return (
     <Layout>
       <AnimatePage>
@@ -101,6 +111,15 @@ const App = () => {
           </Button>
           <Button type="primary" onClick={handleOpenAndroidKunal1}>
             kunal android1
+          </Button>
+          <Button type="primary" onClick={latest}>
+            latest
+          </Button>{" "}
+          <Button type="primary" onClick={latest1}>
+            latest1
+          </Button>{" "}
+          <Button type="primary" onClick={latest2}>
+            latest2
           </Button>
         </Flex>
       </AnimatePage>
