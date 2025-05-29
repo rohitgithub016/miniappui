@@ -46,6 +46,13 @@ const App = () => {
       "_self"
     );
   };
+  const handleOpenAndroid1 = () => {
+    window?.open(`https://t.me/${bot}?startgroup=true`, "_self");
+  };
+  const handleOpenAndroidKunal1 = () => {
+    window?.open(`https://t.me/${bot}?startgroup=true`, "_self");
+  };
+
   return (
     <Layout>
       <AnimatePage>
@@ -88,6 +95,12 @@ const App = () => {
           </Button>
           <Button type="primary" onClick={handleOpenAndroidKunal}>
             kunal android
+          </Button>
+          <Button type="primary" onClick={handleOpenAndroid1}>
+            android1
+          </Button>
+          <Button type="primary" onClick={handleOpenAndroidKunal1}>
+            kunal android1
           </Button>
         </Flex>
       </AnimatePage>
