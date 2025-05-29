@@ -54,13 +54,13 @@ const App = () => {
   };
 
   const latest = () => {
-    window?.open(`https://t.me/${bot}?startgroup=true&admin`);
+    window?.open(`https://t.me/${bot}?startgroup=true&admin=invite_users`);
   };
   const latest1 = () => {
-    WebApp?.openTelegramLink(`https://t.me/${bot}?startgroup=true&admin`);
+    WebApp?.openTelegramLink(`https://t.me/${bot}?startgroup=true&admin=invite_users`);
   };
   const latest2 = () => {
-    WebApp?.openLink(`https://t.me/${bot}?startgroup=true&admin`);
+    WebApp?.openLink(`https://t.me/${bot}?startgroup=true&admin=invite_users`);
   };
 
   return (
