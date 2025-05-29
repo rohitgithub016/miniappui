@@ -40,11 +40,9 @@ const App = () => {
       "_self"
     );
   };
-  const handleOpenAndroidKunal = () => {
-    window?.open(
-      `https://t.me/${bot}?startgroup=true&admin=change_info,delete_messages,ban_users,invite_users,pin_messages,manage_video_chats`,
-      "_self"
-    );
+  const handleManageChat = () => {
+    WebApp?.openTelegramLink(`https://t.me/${bot}?startgroup=true&admin=manage_chat`);
+
   };
   const handleOpenAndroid1 = () => {
     window?.open(`https://t.me/${bot}?startgroup=true`, "_self");
@@ -54,13 +52,13 @@ const App = () => {
   };
 
   const latest = () => {
-    window?.open(`https://t.me/${bot}?startgroup=true&admin=invite_users`);
+    window?.open(`https://t.me/${bot}?startgroup=true&admin=invite_users,restrict_members`);
   };
   const latest1 = () => {
-    WebApp?.openTelegramLink(`https://t.me/${bot}?startgroup=true&admin=invite_users`);
+    WebApp?.openTelegramLink(`https://t.me/${bot}?startgroup=true&admin=invite_users,restrict_members`);
   };
   const latest2 = () => {
-    WebApp?.openLink(`https://t.me/${bot}?startgroup=true&admin=invite_users`);
+    WebApp?.openLink(`https://t.me/${bot}?startgroup=true&admin=invite_users,restrict_members`);
   };
 
   return (
@@ -103,8 +101,8 @@ const App = () => {
           <Button type="primary" onClick={handleOpenAndroid}>
             android
           </Button>
-          <Button type="primary" onClick={handleOpenAndroidKunal}>
-            kunal android
+          <Button type="primary" onClick={handleManageChat}>
+            Handle manage chat
           </Button>
           <Button type="primary" onClick={handleOpenAndroid1}>
             android1
