@@ -2,6 +2,7 @@ import { Button, Flex, Layout, Typography } from "antd";
 import AnimatePage from "./Component/AnimatePage";
 import { useNavigate } from "react-router-dom";
 import WebApp from "@twa-dev/sdk";
+import useInitiateTelegram from "./hooks/useInitiateTelegram";
 const navOptions = [
   { label: "HOME", value: "/" },
   { label: "ABOUT US", value: "/about" },
@@ -11,6 +12,7 @@ const navOptions = [
 const App = () => {
   const navigate = useNavigate();
   const bot = "hubz_dev_v2_bot";
+  useInitiateTelegram();
   const handleClick = () => {
     if (WebApp?.platform === "ios") {
       WebApp.openTelegramLink(`https://t.me/${bot}?startgroup=true`);
