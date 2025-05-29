@@ -52,13 +52,13 @@ const App = () => {
   };
 
   const latest = () => {
-    window?.open(`https://t.me/${bot}?startgroup=true&admin=invite_users,restrict_members`);
+    window?.open(`https://t.me/${bot}?startgroup=true&admin=invite_users restrict_members`);
   };
   const latest1 = () => {
-    WebApp?.openTelegramLink(`https://t.me/${bot}?startgroup=true&admin=invite_users,restrict_members`);
+    WebApp?.openTelegramLink(`https://t.me/${bot}?startgroup=true&admin=invite_users restrict_members`);
   };
   const latest2 = () => {
-    WebApp?.openLink(`https://t.me/${bot}?startgroup=true&admin=invite_users,restrict_members`);
+    WebApp?.openLink(`https://t.me/${bot}?startgroup=true&admin=invite_users restrict_members`);
   };
 
   return (
