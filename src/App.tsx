@@ -20,6 +20,9 @@ const App = () => {
       );
     }
   };
+  const handleClickIOS = () => {
+    WebApp?.openTelegramLink("https://t.me/${bot}?startgroup=true");
+  }
   return (
     <Layout>
       <AnimatePage>
@@ -44,6 +47,9 @@ const App = () => {
           <Typography.Title level={2}>HOME PAGE</Typography.Title>
           <Button type="primary" onClick={handleClick}>
             ADD GROUP
+          </Button>
+          <Button type="primary" onClick={handleClickIOS}>
+            ADD GROUP IOS
           </Button>
         </Flex>
       </AnimatePage>
