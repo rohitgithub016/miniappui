@@ -11,7 +11,7 @@ const navOptions = [
 
 ];
 
-const CareerPage = () => {
+const Page3 = () => {
   const navigate = useNavigate();
   console.log(window.history.length);
   return (
@@ -35,11 +35,11 @@ const CareerPage = () => {
                     </Typography.Text>
                   ))}
                 </Flex>
-          <Typography.Title level={2}>CAREER PAGE</Typography.Title>
+          <Typography.Title level={2}>PAGE THREE</Typography.Title>
         </Flex>
       </AnimatePage>
     </Layout>
   );
 };
 
-export default CareerPage;
+export default Page3;
