@@ -16,7 +16,7 @@ const App = () => {
       WebApp.openTelegramLink(`https://t.me/${bot}?startgroup=true`);
     } else {
       WebApp.openTelegramLink(
-        `https://t.me/${bot}?startgroup=true&admin=manage_chat,invite_users,change_info,post_messages,edit_messages,delete_messages,pin_messages,restrict_members`
+        `https://t.me/${bot}?startgroup=true&admin=manage_chat invite_users change_info post_messages edit_messages delete_messages pin_messages restrict_members`
       );
     }
   };
