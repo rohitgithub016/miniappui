@@ -9,6 +9,7 @@ const navOptions = [
 
 const CareerPage = () => {
   const navigate = useNavigate();
+  console.log(window.history.length);
   return (
     <Layout>
       <AnimatePage>
