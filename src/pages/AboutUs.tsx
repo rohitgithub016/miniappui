@@ -1,6 +1,9 @@
 import { Flex, Layout, Typography } from "antd";
 import AnimatePage from "../Component/AnimatePage";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { setAnimateLeftToRight } from "../appslice";
 const navOptions = [
   { label: "HOME", value: "/" },
   { label: "ABOUT US", value: "/about" },
@@ -9,6 +12,12 @@ const navOptions = [
 
 const About = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setAnimateLeftToRight(false));
+  }, []);
+
   return (
     <Layout>
       <AnimatePage>

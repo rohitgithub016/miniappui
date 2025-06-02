@@ -1,6 +1,9 @@
 import { Flex, Layout, Typography } from "antd";
 import AnimatePage from "../Component/AnimatePage";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { setAnimateLeftToRight } from "../appslice";
 const navOptions = [
   { label: "HOME", value: "/" },
   { label: "ABOUT US", value: "/about" },
@@ -8,12 +11,16 @@ const navOptions = [
   { label: "PAGE ONE", value: "/page1" },
   { label: "PAGE TWO", value: "/page2" },
   { label: "PAGE THREE", value: "/page3" },
-
 ];
 
 const Page3 = () => {
   const navigate = useNavigate();
-  console.log(window.history.length);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setAnimateLeftToRight(false));
+  }, []);
+
   return (
     <Layout>
       <AnimatePage>
@@ -23,18 +30,18 @@ const Page3 = () => {
           align="center"
           className="flex-1 page-body"
         >
-                <Flex
-                  gap={10}
-                  className="padding-10 page-header"
-                  justify="center"
-                  align="center"
-                >
-                  {navOptions?.map((option) => (
-                    <Typography.Text onClick={() => navigate(option?.value)}>
-                      {option.label}
-                    </Typography.Text>
-                  ))}
-                </Flex>
+          <Flex
+            gap={10}
+            className="padding-10 page-header"
+            justify="center"
+            align="center"
+          >
+            {navOptions?.map((option) => (
+              <Typography.Text onClick={() => navigate(option?.value)}>
+                {option.label}
+              </Typography.Text>
+            ))}
+          </Flex>
           <Typography.Title level={2}>PAGE THREE</Typography.Title>
         </Flex>
       </AnimatePage>

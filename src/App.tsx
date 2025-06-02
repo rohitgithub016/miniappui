@@ -2,6 +2,9 @@ import { Flex, Layout, Typography } from "antd";
 import AnimatePage from "./Component/AnimatePage";
 import { useNavigate } from "react-router-dom";
 import useInitiateTelegram from "./hooks/useInitiateTelegram";
+import { useDispatch } from "react-redux";
+import { setAnimateLeftToRight } from "./appslice";
+import { useEffect } from "react";
 const navOptions = [
   { label: "HOME", value: "/" },
   { label: "ABOUT US", value: "/about" },
@@ -11,6 +14,11 @@ const navOptions = [
 const App = () => {
   const navigate = useNavigate();
   useInitiateTelegram();
+  const dispatch = useDispatch();
+
+  useEffect(()=>{
+    dispatch(setAnimateLeftToRight(false));
+  },[])
 
   return (
     <Layout>
