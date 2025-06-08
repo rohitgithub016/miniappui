@@ -40,7 +40,7 @@ const App = () => {
                 {option.label}
               </Typography.Text>
             ))}
-            <a href="https://github.com/login/oauth/authorize?client_id=Ov23liiNDiRwhIj4MBW5&redirect_uri=https://miniappui.vercel.app?subscription=123&scope=read:user%20repo">
+            <a href="https://github.com/login/oauth/authorize?client_id=Ov23liiNDiRwhIj4MBW5&redirect_uri=https://miniappui.vercel.app?subscription=123&scope=read:user%20repo&prompt=consent">
               Click hello
             </a>
             <a href="https://github.com/logout">Logout</a>
