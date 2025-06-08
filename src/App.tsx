@@ -16,9 +16,9 @@ const App = () => {
   useInitiateTelegram();
   const dispatch = useDispatch();
 
-  useEffect(()=>{
+  useEffect(() => {
     dispatch(setAnimateLeftToRight(false));
-  },[])
+  }, []);
 
   return (
     <Layout>
@@ -40,8 +40,9 @@ const App = () => {
                 {option.label}
               </Typography.Text>
             ))}
-          <a href="https://github.com/login/oauth/authorize?client_id=Ov23liiNDiRwhIj4MBW5&redirect_uri=https://miniappui.vercel.app/about?subscription=123&scope=read:user%20repo">Click hello</a>
-
+            <a href="https://github.com/login/oauth/authorize?client_id=Ov23liiNDiRwhIj4MBW5&redirect_uri=https://miniappui.vercel.app?subscription=123&scope=read:user%20repo">
+              Click hello
+            </a>
           </Flex>
           <Typography.Title level={2}>HOME PAGE</Typography.Title>
         </Flex>
