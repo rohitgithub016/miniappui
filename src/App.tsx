@@ -1,10 +1,11 @@
-import { Flex, Layout, Typography } from "antd";
+import { Button, Flex, Layout, Typography } from "antd";
 import AnimatePage from "./Component/AnimatePage";
 import { useNavigate } from "react-router-dom";
 import useInitiateTelegram from "./hooks/useInitiateTelegram";
 import { useDispatch } from "react-redux";
 import { setAnimateLeftToRight } from "./appslice";
 import { useEffect } from "react";
+import WebApp from "@twa-dev/sdk";
 const navOptions = [
   { label: "HOME", value: "/" },
   { label: "ABOUT US", value: "/about" },
@@ -40,9 +41,7 @@ const App = () => {
                 {option.label}
               </Typography.Text>
             ))}
-            <a href="https://github.com/login/oauth/authorize?client_id=Ov23liiNDiRwhIj4MBW5&redirect_uri=https://miniappui.vercel.app?subscription=123&scope=read:user%20repo&prompt=consent">
-              Click hello
-            </a>
+            <Button onClick={()=>{WebApp.openLink("https://github.com/login/oauth/authorize?client_id=Ov23liiNDiRwhIj4MBW5&redirect_uri=https://miniappui.vercel.app?subscription=123&scope=read:user%20repo&prompt=consent")}}>Click me</Button>
             <a href="https://github.com/logout">Logout</a>
           </Flex>
           <Typography.Title level={2}>HOME PAGE</Typography.Title>
