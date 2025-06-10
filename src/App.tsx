@@ -41,7 +41,7 @@ const App = () => {
                 {option.label}
               </Typography.Text>
             ))}
-            <Button onClick={()=>{WebApp.openLink("https://github.com/login/oauth/authorize?client_id=Ov23liiNDiRwhIj4MBW5&redirect_uri=https://t.me/miniappuibot?startapp&scope=read:user%20repo&prompt=login")}}>Click me</Button>
+            <Button onClick={()=>{WebApp.openLink("https://github.com/login/oauth/authorize?client_id=Ov23liiNDiRwhIj4MBW5&redirect_uri=https://t.me/miniappuibot?startapp&scope=read:user%20repo&prompt=consent")}}>Click me</Button>
             <a href="https://github.com/logout">Logout</a>
           </Flex>
           <Typography.Title level={2}>HOME PAGE</Typography.Title>
