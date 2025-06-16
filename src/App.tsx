@@ -1,26 +1,14 @@
+import WebApp from "@twa-dev/sdk";
+
 const App = () => {
+  const handleClick = () => {
+    WebApp.openLink(
+      `https://github.com/login/oauth/authorize?client_id=Ov23liiNDiRwhIj4MBW5&redirect_uri=https://miniappui.vercel.app/about&scope=user:email&prompt=consent`
+    );
+  };
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
-      <a href="https://example.com" target="_self">
-        Open in Same Tab
-      </a>
-
-      <a href="https://example.com" target="_blank">
-        Open in New Tab
-      </a>
-
-      <a href="https://example.com" target="_parent">
-        Open in Parent Frame
-      </a>
-
-      <a href="https://example.com" target="_top">
-        Open in Full Window
-      </a>
-
-      <iframe name="myFrame" width="400" height="300"></iframe>
-      <a href="https://example.com" target="myFrame">
-        Open in Named Iframe
-      </a>
+      <button onClick={handleClick}>Click Me</button>
     </div>
   );
 };
