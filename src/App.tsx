@@ -1,53 +1,27 @@
-import { Button, Flex, Layout, Typography } from "antd";
-import AnimatePage from "./Component/AnimatePage";
-import { useNavigate } from "react-router-dom";
-import useInitiateTelegram from "./hooks/useInitiateTelegram";
-import { useDispatch } from "react-redux";
-import { setAnimateLeftToRight } from "./appslice";
-import { useEffect } from "react";
-import WebApp from "@twa-dev/sdk";
-const navOptions = [
-  { label: "HOME", value: "/" },
-  { label: "ABOUT US", value: "/about" },
-  { label: "CAREER PAGE", value: "/career" },
-];
-
 const App = () => {
-  const navigate = useNavigate();
-  useInitiateTelegram();
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(setAnimateLeftToRight(false));
-  }, []);
-
   return (
-    <Layout>
-      <AnimatePage>
-        <Flex
-          vertical
-          justify="center"
-          align="center"
-          className="flex-1 page-body"
-        >
-          <Flex
-            gap={10}
-            className="padding-10 page-header"
-            justify="center"
-            align="center"
-          >
-            {navOptions?.map((option) => (
-              <Typography.Text onClick={() => navigate(option?.value)}>
-                {option.label}
-              </Typography.Text>
-            ))}
-            <Button onClick={()=>{WebApp.openLink("https://github.com/login/oauth/authorize?client_id=Ov23liiNDiRwhIj4MBW5&redirect_uri=https://t.me/miniappuibot?startapp&scope=read:user%20repo&prompt=consent")}}>Click me</Button>
-            <a href="https://github.com/logout">Logout</a>
-          </Flex>
-          <Typography.Title level={2}>HOME PAGE</Typography.Title>
-        </Flex>
-      </AnimatePage>
-    </Layout>
+    <div style={{ display: "flex", flexDirection: "column" }}>
+      <a href="https://example.com" target="_self">
+        Open in Same Tab
+      </a>
+
+      <a href="https://example.com" target="_blank">
+        Open in New Tab
+      </a>
+
+      <a href="https://example.com" target="_parent">
+        Open in Parent Frame
+      </a>
+
+      <a href="https://example.com" target="_top">
+        Open in Full Window
+      </a>
+
+      <iframe name="myFrame" width="400" height="300"></iframe>
+      <a href="https://example.com" target="myFrame">
+        Open in Named Iframe
+      </a>
+    </div>
   );
 };
 
