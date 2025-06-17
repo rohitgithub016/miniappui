@@ -2,7 +2,7 @@ import WebApp from "@twa-dev/sdk";
 import eruda from "eruda";
 eruda.init();
 
-const app_url = `https://t.me/miniappuibot?startapp=subscribe-684fc1087d6161139b0b11ed`
+const app_url = `https://t.me/hubz_app_bot?startapp=subscribe-684fc1087d6161139b0b11ed`
 
 const App = () => {
   // useInitiateTelegram();
