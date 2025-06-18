@@ -2,7 +2,7 @@ import WebApp from "@twa-dev/sdk";
 import eruda from "eruda";
 eruda.init();
 
-const app_url = `https://t.me/hubz_app_bot?startapp=subscribe-684fc1087d6161139b0b11ed`
+const app_url = `https://t.me/miniappuibot?startapp=subscribe-684fc1087d6161139b0b11ed&code=asdfasdfasdfasdf`
 
 const App = () => {
   // useInitiateTelegram();
@@ -14,7 +14,7 @@ const App = () => {
   console.log(WebApp?.initDataUnsafe?.start_param);
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
-      <button onClick={handleClick}>Click Me</button>
+      <button onClick={handleClick}>HUBZ PROD</button>
     </div>
   );
 };
