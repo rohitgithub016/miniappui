@@ -1,24 +1,27 @@
+/* Home.css */
 body {
-    margin: 0px;
+    margin: 0 !important;
+    box-sizing: border-box;
 }
 
-.page-container {
-    height: 100vh;
+.home-container {
+  margin: 60px auto;
+  padding: 24px;
+  background-color: #a59696;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  height: 100vh;
 }
 
-.padding-10 {
-    padding: 10px;
+.home-container h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 16px;
 }
 
-.flex-1 {
-    flex: 1;
-}
-
-.page-header {
-    background: #b38cb4;
-}
-
-.page-body {
-    background: linear-gradient(to right, #d9afd9, #97d9e1);
-    height: 100vh;
+.home-container p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
 }
