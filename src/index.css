@@ -25,3 +25,6 @@ body {
   color: #555;
   line-height: 1.6;
 }
+.ant-modal-body{
+  height: 400px;
+}
