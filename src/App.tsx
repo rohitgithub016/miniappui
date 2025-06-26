@@ -28,7 +28,7 @@ const App = () => {
         onCancel={handleCancel}
       >
         <iframe
-          src="https://dashboard.hubz.io/"
+          src="https://resources.hubz.io/badge-rewards-with-csbts/setting-up-badge-rewards-with-csbts"
           title="Example Iframe"
           style={{ width: "100%", height: "100%", border: "none" }}
         ></iframe>
