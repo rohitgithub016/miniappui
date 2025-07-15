@@ -1,20 +1,21 @@
-import { useDispatch, useSelector } from "react-redux";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { useAccount } from "wagmi";
 
-interface RootState {
-  count: number;
-}
-
-const App = () => {
-  const count = useSelector((state: RootState) => state.count);
-  const dispatch = useDispatch();
-
+function App() {
+  const { address, isConnected } = useAccount();
+  console.log(address);
+  console.log(isConnected);
   return (
-    <div>
-      <h1>{count}</h1>
-      <button onClick={() => dispatch({ type: "increment" })}>+</button>
-      <button onClick={() => dispatch({ type: "decrement" })}>-</button>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "flex-end",
+        padding: 12,
+      }}
+    >
+      <ConnectButton />
     </div>
   );
-};
+}
 
 export default App;
